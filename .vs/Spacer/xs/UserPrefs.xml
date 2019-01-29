@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{75942997-D018-8683-DFBC-0158D1B21B85}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="16" Column="24" />
+      <File FileName="Assets/Scripts/MissileController.cs" Line="34" Column="9" />
+      <File FileName="Assets/Scripts/PlanetSpawner.cs" Line="10" Column="38" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="13" Column="6" />
+      <File FileName="Assets/Scripts/PlanetController.cs" Line="14" Column="47" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
