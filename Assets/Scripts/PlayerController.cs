@@ -1,10 +1,6 @@
-﻿using UnityEngine;
-
-//[System.Serializable]
-//public class Done_Boundary
-//{
-//    public float xMin, xMax, zMin, zMax;
-//}
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +17,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");

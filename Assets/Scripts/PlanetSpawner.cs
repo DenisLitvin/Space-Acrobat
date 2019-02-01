@@ -35,7 +35,7 @@ public class PlanetSpawner : MonoBehaviour
         {
             float randomX = Random.Range(-radius, radius);
             float randomZ = Random.Range(-radius, radius);
-            Vector3 position = new Vector3(randomX, 0f, randomZ);
+            Vector3 position = new Vector3(randomX, -10f, randomZ);
             SpawnPlanetAtPosition(position);
         }
     }
