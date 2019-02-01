@@ -6,10 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float tilt;
+    public float degreesRotatePerFrame;
 
+    public Joystick joystick;
     public Transform scrollHolderTransform;
 
     private Rigidbody rb;
+
+    private float oldRotationZ;
 
     private void Start()
     {
@@ -19,27 +23,50 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
 
-        float y = rb.rotation.eulerAngles.y;
+        Vector3 oldRotation = transform.rotation.eulerAngles;
 
-        Quaternion rotation = Quaternion.Euler
-        (
-            0.0f,
-            moveHorizontal * 3 + y,
-            moveHorizontal * -tilt
-        );
+        if (moveVector != Vector3.zero)
+        {
+            Vector3 lookRotation = Quaternion.LookRotation(moveVector).eulerAngles;
 
-        rb.rotation = rotation;
+            float diff = (lookRotation.y - oldRotation.y + 180f) % 360f - 180f;
+
+            float norm = Mathf.Max(-degreesRotatePerFrame, Mathf.Min(degreesRotatePerFrame, diff < -180f ? diff + 360f : diff));
+            float targetRotationY = norm + oldRotation.y;
+
+            float targetRotationZ = (targetRotationY - oldRotation.y) * -tilt;
+            float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, targetRotationZ, 0.4f);
+
+            oldRotationZ = lerpedTargetRotationZ;
+            rb.MoveRotation(Quaternion.Euler
+            (
+                0f,
+                targetRotationY,
+                lerpedTargetRotationZ
+            ));
+        } 
+        else
+        {
+            float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, 0f, 0.4f);
+            oldRotationZ = lerpedTargetRotationZ;
+
+            rb.MoveRotation(Quaternion.Euler
+            (
+                0f,
+                oldRotation.y,
+                lerpedTargetRotationZ
+            ));
+        }
 
         scrollHolderTransform.position = new Vector3
         (
-            rb.transform.position.x,
+            transform.position.x,
             scrollHolderTransform.position.y,
-            rb.transform.position.z
+            transform.position.z
         );
 
-        rb.velocity = rb.transform.forward * speed;
+        rb.velocity = transform.forward * speed;
     }
 }

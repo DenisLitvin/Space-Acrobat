@@ -14,7 +14,9 @@ public class MissileSpawner : MonoBehaviour
     {
         for (int i = 0; i < num; i++)
         {
-            Vector2 offset = Random.insideUnitCircle * radius;
+            float rand = Random.Range(0f, 2 * Mathf.PI);
+            Vector2 vector = new Vector2(Mathf.Sin(rand), Mathf.Cos(rand));
+            Vector2 offset = vector * radius;
             Vector3 pos = playerTransform.position + new Vector3(offset.x, 0f, offset.y);
             Quaternion rot = Quaternion.LookRotation(playerTransform.position - pos, Vector3.up);
             GameObject missile = Instantiate(missilePrefab, pos, rot);

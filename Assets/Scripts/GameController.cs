@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public MissileSpawner missileSpawner;
 
-    private int level = 0;
+    private int level = 1;
 
     void Start()
     {

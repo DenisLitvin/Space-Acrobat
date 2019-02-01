@@ -19,19 +19,19 @@ public class MissileController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Vector3 toPlayer = (playerTransform.position - rb.transform.position).normalized;
-        Vector3 targetRotationAngles = Quaternion.LookRotation(toPlayer).eulerAngles;
-        Vector3 currentRotationAngles = rb.rotation.eulerAngles;
+        Vector3 lookRotation = Quaternion.LookRotation(toPlayer).eulerAngles;
+        Vector3 oldRotation = rb.rotation.eulerAngles;
 
-        float diff = (targetRotationAngles.y - currentRotationAngles.y + 180f) % 360f - 180f;
+        float diff = (lookRotation.y - oldRotation.y + 180f) % 360f - 180f;
 
         float norm = Mathf.Max(-degreesRotatePerFrame, Mathf.Min(degreesRotatePerFrame, diff < -180f ? diff + 360f : diff));
-        float toRotateY = norm + currentRotationAngles.y;
+        float toRotateY = norm + oldRotation.y;
 
         rb.MoveRotation(Quaternion.Euler
             (
-                currentRotationAngles.x,
+                oldRotation.x,
                 toRotateY,
-                currentRotationAngles.z
+                oldRotation.z
             )
         );
 
