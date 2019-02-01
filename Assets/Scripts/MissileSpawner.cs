@@ -10,14 +10,17 @@ public class MissileSpawner : MonoBehaviour
     public Transform playerTransform;
     public float radius;
 
-   public void SpawnMissile(int i)
+   public void SpawnMissile(int num)
     {
-        Vector2 offset = Random.insideUnitCircle * radius;
-        Vector3 pos = playerTransform.position + new Vector3(offset.x, 0f, offset.y);
-        Quaternion rot = Quaternion.LookRotation(playerTransform.position - pos, Vector3.up);
-        GameObject missile = Instantiate(missilePrefab, pos, rot);
-        MissileController controller = missile.GetComponent<MissileController>();
-        controller.playerTransform = playerTransform;
-        controller.explosionPrefab = missileExplosionPrefab;
+        for (int i = 0; i < num; i++)
+        {
+            Vector2 offset = Random.insideUnitCircle * radius;
+            Vector3 pos = playerTransform.position + new Vector3(offset.x, 0f, offset.y);
+            Quaternion rot = Quaternion.LookRotation(playerTransform.position - pos, Vector3.up);
+            GameObject missile = Instantiate(missilePrefab, pos, rot);
+            MissileController controller = missile.GetComponent<MissileController>();
+            controller.playerTransform = playerTransform;
+            controller.explosionPrefab = missileExplosionPrefab;
+        }
     }
 }
