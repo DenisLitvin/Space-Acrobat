@@ -345,6 +345,8 @@ struct X509Certificate_t6859B8914E252B6831D6F59A2A720CD23F7FA7B2;
 struct X509CertificateImpl_t89610BFDE87B872143A4623CFC7F17275EB48313;
 // System.Security.Cryptography.X509Certificates.X509CertificateImplMono
 struct X509CertificateImplMono_tF593FD113F7348921BCBFD72B6600FF2B5B3C1E1;
+// System.Security.Permissions.SecurityPermissionAttribute
+struct SecurityPermissionAttribute_t5CC17730B1C5C24D3D705B1FEB7045080924E12F;
 // System.Security.Policy.Evidence
 struct Evidence_t58C8D73D9B4FC7DD3BDDEE37E3C283678BFDC307;
 // System.Security.Policy.Evidence/EvidenceEnumerator
@@ -7206,6 +7208,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // X509CERTIFICATEIMPLMONO_TF593FD113F7348921BCBFD72B6600FF2B5B3C1E1_H
+#ifndef SECURITYATTRIBUTE_T9F1DB5B572D6E2D518A2F186A21522667521B195_H
+#define SECURITYATTRIBUTE_T9F1DB5B572D6E2D518A2F186A21522667521B195_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Security.Permissions.SecurityAttribute
+struct  SecurityAttribute_t9F1DB5B572D6E2D518A2F186A21522667521B195  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SECURITYATTRIBUTE_T9F1DB5B572D6E2D518A2F186A21522667521B195_H
 #ifndef UNVERIFIABLECODEATTRIBUTE_T59CB2C1D52D2F3A36B1A173988BE2DE3A6971043_H
 #define UNVERIFIABLECODEATTRIBUTE_T59CB2C1D52D2F3A36B1A173988BE2DE3A6971043_H
 #ifdef __clang__
@@ -10662,6 +10684,55 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // X509KEYSTORAGEFLAGS_TB83685E3CDDBA542D3A0BDED60EC5D8DAAB8EFC8_H
+#ifndef CODEACCESSSECURITYATTRIBUTE_TBBF0EFA8FE4C0ED2D8E2469B658D1CDDFF8850E6_H
+#define CODEACCESSSECURITYATTRIBUTE_TBBF0EFA8FE4C0ED2D8E2469B658D1CDDFF8850E6_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Security.Permissions.CodeAccessSecurityAttribute
+struct  CodeAccessSecurityAttribute_tBBF0EFA8FE4C0ED2D8E2469B658D1CDDFF8850E6  : public SecurityAttribute_t9F1DB5B572D6E2D518A2F186A21522667521B195
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // CODEACCESSSECURITYATTRIBUTE_TBBF0EFA8FE4C0ED2D8E2469B658D1CDDFF8850E6_H
+#ifndef SECURITYPERMISSIONFLAG_T09995BBE885B1D27F09ADF606D9DBEEF3FF4B899_H
+#define SECURITYPERMISSIONFLAG_T09995BBE885B1D27F09ADF606D9DBEEF3FF4B899_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Security.Permissions.SecurityPermissionFlag
+struct  SecurityPermissionFlag_t09995BBE885B1D27F09ADF606D9DBEEF3FF4B899 
+{
+public:
+	// System.Int32 System.Security.Permissions.SecurityPermissionFlag::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(SecurityPermissionFlag_t09995BBE885B1D27F09ADF606D9DBEEF3FF4B899, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SECURITYPERMISSIONFLAG_T09995BBE885B1D27F09ADF606D9DBEEF3FF4B899_H
 #ifndef SECURITYELEMENTTYPE_T637211F6560E42978F1918BE4727B4651B1DA7C7_H
 #define SECURITYELEMENTTYPE_T637211F6560E42978F1918BE4727B4651B1DA7C7_H
 #ifdef __clang__
@@ -11990,6 +12061,35 @@ struct StreamingContext_t2CCDC54E0E8D078AF4A50E3A8B921B828A900034_marshaled_com
 	int32_t ___m_state_1;
 };
 #endif // STREAMINGCONTEXT_T2CCDC54E0E8D078AF4A50E3A8B921B828A900034_H
+#ifndef SECURITYPERMISSIONATTRIBUTE_T5CC17730B1C5C24D3D705B1FEB7045080924E12F_H
+#define SECURITYPERMISSIONATTRIBUTE_T5CC17730B1C5C24D3D705B1FEB7045080924E12F_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Security.Permissions.SecurityPermissionAttribute
+struct  SecurityPermissionAttribute_t5CC17730B1C5C24D3D705B1FEB7045080924E12F  : public CodeAccessSecurityAttribute_tBBF0EFA8FE4C0ED2D8E2469B658D1CDDFF8850E6
+{
+public:
+	// System.Security.Permissions.SecurityPermissionFlag System.Security.Permissions.SecurityPermissionAttribute::m_Flags
+	int32_t ___m_Flags_0;
+
+public:
+	inline static int32_t get_offset_of_m_Flags_0() { return static_cast<int32_t>(offsetof(SecurityPermissionAttribute_t5CC17730B1C5C24D3D705B1FEB7045080924E12F, ___m_Flags_0)); }
+	inline int32_t get_m_Flags_0() const { return ___m_Flags_0; }
+	inline int32_t* get_address_of_m_Flags_0() { return &___m_Flags_0; }
+	inline void set_m_Flags_0(int32_t value)
+	{
+		___m_Flags_0 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SECURITYPERMISSIONATTRIBUTE_T5CC17730B1C5C24D3D705B1FEB7045080924E12F_H
 #ifndef SECURITYRULESATTRIBUTE_T174D7F27BDDE91A664C1F852319E99D02A87E6F6_H
 #define SECURITYRULESATTRIBUTE_T174D7F27BDDE91A664C1F852319E99D02A87E6F6_H
 #ifdef __clang__
@@ -16236,6 +16336,61 @@ IL_0027:
 		X509CertificateImplMono_tF593FD113F7348921BCBFD72B6600FF2B5B3C1E1 * L_11 = (X509CertificateImplMono_tF593FD113F7348921BCBFD72B6600FF2B5B3C1E1 *)il2cpp_codegen_object_new(X509CertificateImplMono_tF593FD113F7348921BCBFD72B6600FF2B5B3C1E1_il2cpp_TypeInfo_var);
 		X509CertificateImplMono__ctor_m8B27EBE75E88C30F41623A17553A41F969D5A2C1(L_11, L_10, /*hidden argument*/NULL);
 		return L_11;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void System.Security.Permissions.SecurityPermissionAttribute::set_SkipVerification(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void SecurityPermissionAttribute_set_SkipVerification_m1A284EDF78B6996F4CDF56A6FDEAA18B821DE765 (SecurityPermissionAttribute_t5CC17730B1C5C24D3D705B1FEB7045080924E12F * __this, bool ___value0, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = ___value0;
+		if (!L_0)
+		{
+			goto IL_0012;
+		}
+	}
+	{
+		int32_t L_1 = __this->get_m_Flags_0();
+		__this->set_m_Flags_0(((int32_t)((int32_t)L_1|(int32_t)4)));
+		return;
+	}
+
+IL_0012:
+	{
+		int32_t L_2 = __this->get_m_Flags_0();
+		__this->set_m_Flags_0(((int32_t)((int32_t)L_2&(int32_t)((int32_t)-5))));
+		return;
 	}
 }
 #ifdef __clang__

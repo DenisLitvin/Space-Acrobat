@@ -124,12 +124,4 @@ public class PlanetSpawner : MonoBehaviour
         }
         return Instantiate(planetPrefabs[idx]);
     }
-
-    private void OnDrawGizmos()
-    {
-        ////float newX = x * Mathf.Cos(tr) - z * Mathf.Sin(randomAngle);
-        ////float newZ = x * Mathf.Sin(randomAngle) + z * Mathf.Cos(randomAngle);
-        ////var from = new Vector3newx)
-        //Gizmos.DrawLine(transform.position + playerTransform.forward * radius, transform.position);
-    }
 }

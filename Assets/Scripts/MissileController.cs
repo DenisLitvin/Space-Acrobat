@@ -15,7 +15,7 @@ public class MissileController : MonoBehaviour
 
     private Rigidbody rb;
 
-    private void Update()
+    private void FixedUpdate()
     {
         rb = GetComponent<Rigidbody>();
         Vector3 toPlayer = (playerTransform.position - rb.transform.position).normalized;

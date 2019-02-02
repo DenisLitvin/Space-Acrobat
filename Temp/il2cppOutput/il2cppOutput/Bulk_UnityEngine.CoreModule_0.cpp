@@ -17320,8 +17320,6 @@ extern "C" IL2CPP_METHOD_ATTR bool Quaternion_Equals_m099618C36B86DC63B2E7C89673
 extern "C" IL2CPP_METHOD_ATTR String_t* Quaternion_ToString_m38DF4A1C05A91331D0A208F45CE74AF005AB463D (Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357 * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.Random::RandomRangeInt(System.Int32,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR int32_t Random_RandomRangeInt_m4D223ACEC78BCC435D90A7D3696775DE973D324E (int32_t ___min0, int32_t ___max1, const RuntimeMethod* method);
-// System.Void UnityEngine.Random::GetRandomUnitCircle(UnityEngine.Vector2&)
-extern "C" IL2CPP_METHOD_ATTR void Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524 (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * ___output0, const RuntimeMethod* method);
 // System.Void UnityEngine.Random::get_rotation_Injected(UnityEngine.Quaternion&)
 extern "C" IL2CPP_METHOD_ATTR void Random_get_rotation_Injected_m551D34569C10F6CD72A61BDB1ED48F4948056BFA (Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357 * ___ret0, const RuntimeMethod* method);
 // System.Void UnityEngine.RangeInt::.ctor(System.Int32,System.Int32)
@@ -17886,6 +17884,15 @@ extern "C" IL2CPP_METHOD_ATTR int32_t Application_get_platform_m6AFFFF3B077F4D5C
 	_il2cpp_icall_func = (Application_get_platform_m6AFFFF3B077F4D5CA1F71CF14ABA86A83FC71672_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Application::get_platform()");
 	int32_t retVal = _il2cpp_icall_func();
 	return retVal;
+}
+// System.Void UnityEngine.Application::set_targetFrameRate(System.Int32)
+extern "C" IL2CPP_METHOD_ATTR void Application_set_targetFrameRate_mC20C40E50BAB994B10DDAC0E3C26A851025337BC (int32_t ___value0, const RuntimeMethod* method)
+{
+	typedef void (*Application_set_targetFrameRate_mC20C40E50BAB994B10DDAC0E3C26A851025337BC_ftn) (int32_t);
+	static Application_set_targetFrameRate_mC20C40E50BAB994B10DDAC0E3C26A851025337BC_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Application_set_targetFrameRate_mC20C40E50BAB994B10DDAC0E3C26A851025337BC_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Application::set_targetFrameRate(System.Int32)");
+	_il2cpp_icall_func(___value0);
 }
 // System.Void UnityEngine.Application::CallLowMemory()
 extern "C" IL2CPP_METHOD_ATTR void Application_CallLowMemory_m4C6693BD717D61DB33C2FB061FDA8CE055966E75 (const RuntimeMethod* method)
@@ -29572,16 +29579,6 @@ extern "C" IL2CPP_METHOD_ATTR void HeaderAttribute__ctor_m0E05B3623D1742E60908E9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Single UnityEngine.Input::GetAxis(System.String)
-extern "C" IL2CPP_METHOD_ATTR float Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496 (String_t* ___axisName0, const RuntimeMethod* method)
-{
-	typedef float (*Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496_ftn) (String_t*);
-	static Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Input_GetAxis_mF334BDB532DF82E30273ABA0ACB5116AC8244496_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::GetAxis(System.String)");
-	float retVal = _il2cpp_icall_func(___axisName0);
-	return retVal;
-}
 // System.Single UnityEngine.Input::GetAxisRaw(System.String)
 extern "C" IL2CPP_METHOD_ATTR float Input_GetAxisRaw_m35430CD9260C960DFE19F809D5410BA0DBFDE0F7 (String_t* ___axisName0, const RuntimeMethod* method)
 {
@@ -38737,35 +38734,6 @@ extern "C" IL2CPP_METHOD_ATTR int32_t Random_RandomRangeInt_m4D223ACEC78BCC435D9
 	_il2cpp_icall_func = (Random_RandomRangeInt_m4D223ACEC78BCC435D90A7D3696775DE973D324E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Random::RandomRangeInt(System.Int32,System.Int32)");
 	int32_t retVal = _il2cpp_icall_func(___min0, ___max1);
 	return retVal;
-}
-// System.Void UnityEngine.Random::GetRandomUnitCircle(UnityEngine.Vector2&)
-extern "C" IL2CPP_METHOD_ATTR void Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524 (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D * ___output0, const RuntimeMethod* method)
-{
-	typedef void (*Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524_ftn) (Vector2_tA85D2DD88578276CA8A8796756458277E72D073D *);
-	static Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Random::GetRandomUnitCircle(UnityEngine.Vector2&)");
-	_il2cpp_icall_func(___output0);
-}
-// UnityEngine.Vector2 UnityEngine.Random::get_insideUnitCircle()
-extern "C" IL2CPP_METHOD_ATTR Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  Random_get_insideUnitCircle_mCE5CAF9D385C3803EF5BB2942ED154FADE65B4F2 (const RuntimeMethod* method)
-{
-	Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  V_0;
-	memset(&V_0, 0, sizeof(V_0));
-	Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  V_1;
-	memset(&V_1, 0, sizeof(V_1));
-	{
-		Random_GetRandomUnitCircle_m3CAA60141009E3E0B181292C3D02604B0C7C5524((Vector2_tA85D2DD88578276CA8A8796756458277E72D073D *)(&V_0), /*hidden argument*/NULL);
-		Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  L_0 = V_0;
-		V_1 = L_0;
-		goto IL_000f;
-	}
-
-IL_000f:
-	{
-		Vector2_tA85D2DD88578276CA8A8796756458277E72D073D  L_1 = V_1;
-		return L_1;
-	}
 }
 // UnityEngine.Quaternion UnityEngine.Random::get_rotation()
 extern "C" IL2CPP_METHOD_ATTR Quaternion_t319F3319A7D43FFA5D819AD6C0A98851F0095357  Random_get_rotation_mFEB212A2058746E0E8F544D8C2201663861BA77A (const RuntimeMethod* method)

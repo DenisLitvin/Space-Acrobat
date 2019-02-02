@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             float targetRotationY = norm + oldRotation.y;
 
             float targetRotationZ = (targetRotationY - oldRotation.y) * -tilt;
-            float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, targetRotationZ, 0.4f);
+            float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, targetRotationZ, 0.05f);
 
             oldRotationZ = lerpedTargetRotationZ;
             rb.MoveRotation(Quaternion.Euler
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
                 targetRotationY,
                 lerpedTargetRotationZ
             ));
-        } 
+        }
         else
         {
             float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, 0f, 0.4f);

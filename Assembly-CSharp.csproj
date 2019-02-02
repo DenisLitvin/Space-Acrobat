@@ -60,20 +60,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ExplosionController.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
+    <Compile Include="Assets\Scripts\ExplosionController.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\MissileController.cs" />
     <Compile Include="Assets\Scripts\MissileSpawner.cs" />
     <Compile Include="Assets\Scripts\PlanetController.cs" />
     <Compile Include="Assets\Scripts\PlanetSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UiDisplayFps.cs" />
+    <Compile Include="Assets\Suriyun\Spacecraft Mini\Scripts\Swapper.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Examples\2D Example\Player2DExample.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Examples\3D Example\Player3DExample.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <None Include="Assets\Suriyun\Spacecraft Mini\README.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

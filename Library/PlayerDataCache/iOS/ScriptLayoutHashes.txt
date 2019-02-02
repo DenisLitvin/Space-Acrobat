@@ -167,8 +167,10 @@ a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ExplosionController
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-cf66780610d492e5851580a2d12b6f26 Assembly-CSharp.dll:.PlayerController
+98fb4fd37f4433ee70a640eaab311e32 Assembly-CSharp.dll:.PlayerController
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 b8a025422a11c1de812bac762766499a Assembly-CSharp.dll:.BGScroller
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
+5519be926a4f4e8891f8ef1122b81c27 Assembly-CSharp.dll:.UiDisplayFps
+99ab99cca04c119a154c351f3d36880d Assembly-CSharp.dll:.Swapper
