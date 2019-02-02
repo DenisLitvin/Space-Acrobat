@@ -163,7 +163,7 @@ c5ee9c8f46191b969c75ac346f4bcdd5 Assembly-CSharp.dll:.PlanetSpawner
 24f8e55e708a1c8ba0093e1953cd3018 Assembly-CSharp.dll:.VariableJoystick
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
-588cf3712145a3f736a297c6887983cf Assembly-CSharp.dll:.GameController
+6d14561ce5f8990ed8bac5d4eb53dfe3 Assembly-CSharp.dll:.GameController
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ExplosionController
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
