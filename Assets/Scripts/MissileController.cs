@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
+    public GameObject sign;
+    public Canvas canvas;
+
     public GameObject explosionPrefab;
     public Transform playerTransform;
 
@@ -16,6 +19,38 @@ public class MissileController : MonoBehaviour
     private Rigidbody rb;
 
     private void FixedUpdate()
+    {
+        Rotate();
+        MagnetMissiles();
+        TraceSign();
+        rb.velocity = rb.transform.forward * speed;
+    }
+
+    private void TraceSign()
+    {
+        Vector2 screenPoint = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+
+        bool onScreen = screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+        sign.SetActive(!onScreen);
+
+        if (sign.activeSelf)
+        {
+            RectTransform signRect = sign.GetComponent<RectTransform>();
+
+            RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+            float x = Mathf.Max(Mathf.Min(screenPoint.x, 0.93f), 0.07f);
+            float y = Mathf.Max(Mathf.Min(screenPoint.y, 0.85f), 0.05f);
+
+            Vector2 screenPosition = new Vector2(
+                x * canvasRect.sizeDelta.x,
+                y * canvasRect.sizeDelta.y
+            );
+            signRect.anchoredPosition = screenPosition;
+        }
+    }
+
+    private void Rotate()
     {
         rb = GetComponent<Rigidbody>();
         Vector3 toPlayer = (playerTransform.position - rb.transform.position).normalized;
@@ -34,9 +69,10 @@ public class MissileController : MonoBehaviour
                 oldRotation.z
             )
         );
+    }
 
-        rb.velocity = rb.transform.forward * speed;
-
+    private void MagnetMissiles()
+    {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, magnetRadius);
         int i = 0;
         while (i < hitColliders.Length)
@@ -67,6 +103,7 @@ public class MissileController : MonoBehaviour
             }
             gameObject.transform.DetachChildren();
             Destroy(gameObject);
+            Destroy(sign);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         }
     }

@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
     public GameObject[] spaceshipPrefabs;
 
     public GameObject player;
+    //public Canvas canvas;
+    //public GameObject sign;
     public MissileSpawner missileSpawner;
 
     private int level = 1;
