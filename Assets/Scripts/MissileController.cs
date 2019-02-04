@@ -40,7 +40,7 @@ public class MissileController : MonoBehaviour
             RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
             float x = Mathf.Max(Mathf.Min(screenPoint.x, 0.93f), 0.07f);
-            float y = Mathf.Max(Mathf.Min(screenPoint.y, 0.85f), 0.05f);
+            float y = Mathf.Max(Mathf.Min(screenPoint.y, 0.9f), 0.05f);
 
             Vector2 screenPosition = new Vector2(
                 x * canvasRect.sizeDelta.x,
