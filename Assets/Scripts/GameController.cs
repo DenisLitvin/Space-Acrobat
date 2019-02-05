@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     private int level = 1;
     private int currentShipPrefab = 0;
     private bool isPlaying = false;
+    private bool firstRun = true;
+    private float savedShipSpeed;
 
     void Start()
     {
@@ -48,12 +50,7 @@ public class GameController : MonoBehaviour
 
     public void HandleDestroyShip()
     {
-        GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
-        foreach (GameObject missile in missiles)
-        {
-            MissileController controller = missile.GetComponent<MissileController>();
-            controller.Destroy();
-        }
+        DestroyMissiles();
         StopGame();
     }
 
@@ -76,12 +73,28 @@ public class GameController : MonoBehaviour
 
     private void StopGame()
     {
+        if (!firstRun)
+        {
+            savedShipSpeed = playerControllerScript.speed;
+            playerControllerScript.speed = 0f;
+        }
         isPlaying = false;
-        uiInterface.SetActive(true);
         playerControllerScript.SetPlayingMode(false);
         RemoveShip();
-        SpawnShip(currentShipPrefab);
         StopCoroutine("SpawnMissiles");
+        StartCoroutine("ActivateInterface");
+    }
+
+    IEnumerator ActivateInterface()
+    {
+        yield return new WaitForSeconds(2f);
+        if (!firstRun)
+        {
+            SpawnShip(currentShipPrefab);
+            playerControllerScript.speed = savedShipSpeed;
+            uiInterface.SetActive(true);
+        }
+        firstRun = false;
     }
 
     private void RemoveShip()
@@ -99,9 +112,20 @@ public class GameController : MonoBehaviour
     {
         while (true)
         {
+            DestroyMissiles();
             missileSpawner.SpawnMissile(level);
             level += 1;
             yield return new WaitForSeconds(10f);
+        }
+    }
+
+    private void DestroyMissiles()
+    {
+        GameObject[] missiles = GameObject.FindGameObjectsWithTag("Missile");
+        foreach (GameObject missile in missiles)
+        {
+            MissileController controller = missile.GetComponent<MissileController>();
+            controller.Destroy();
         }
     }
 }

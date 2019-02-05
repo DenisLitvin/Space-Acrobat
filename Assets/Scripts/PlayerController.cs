@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick;
     public Transform scrollHolderTransform;
 
+    public GameObject explosionPrefab;
+
     private Rigidbody rb;
 
     private float oldRotationZ;
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
             GameObject gameController = objs[0];
             GameController controllerScript = gameController.GetComponent<GameController>();
             controllerScript.HandleDestroyShip();
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         }
 
     }
