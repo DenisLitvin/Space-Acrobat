@@ -18,6 +18,23 @@ public class MissileController : MonoBehaviour
 
     private Rigidbody rb;
 
+    public void Destroy()
+    {
+        int i = 0;
+        while (i < gameObject.transform.childCount)
+        {
+            float delay = 0f;
+            Transform child = gameObject.transform.GetChild(i);
+            if (child.tag == "Particle") delay = 3f;
+            Destroy(child.gameObject, delay);
+            i++;
+        }
+        gameObject.transform.DetachChildren();
+        Destroy(gameObject);
+        Destroy(sign);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+    }
+
     private void FixedUpdate()
     {
         Rotate();
@@ -36,7 +53,6 @@ public class MissileController : MonoBehaviour
         if (sign.activeSelf)
         {
             RectTransform signRect = sign.GetComponent<RectTransform>();
-
             RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
             float x = Mathf.Max(Mathf.Min(screenPoint.x, 0.93f), 0.07f);
@@ -92,19 +108,7 @@ public class MissileController : MonoBehaviour
     {
         if (other.gameObject.tag == "Missile")
         {
-            int i = 0;
-            while (i < gameObject.transform.childCount)
-            {
-                float delay = 0f;
-                Transform child = gameObject.transform.GetChild(i);
-                if (child.tag == "Particle") delay = 3f;
-                Destroy(child.gameObject, delay);
-                i++;
-            }
-            gameObject.transform.DetachChildren();
-            Destroy(gameObject);
-            Destroy(sign);
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy();
         }
     }
 }

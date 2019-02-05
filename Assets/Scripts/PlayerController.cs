@@ -14,15 +14,38 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     private float oldRotationZ;
+    private bool isPlaying = false;
+
+    public void SetPlayingMode(bool isPlaying)
+    {
+        if (!isPlaying)
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        joystick.joystickMode = JoystickMode.AllAxis;
+        joystick.gameObject.SetActive(isPlaying);
+        this.isPlaying = isPlaying;
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
+
+        scrollHolderTransform.position = new Vector3
+        (
+            transform.position.x,
+            scrollHolderTransform.position.y,
+            transform.position.z
+        );
+
+        rb.velocity = transform.forward * speed;
+
+        if (!isPlaying) return;
+
         Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
 
         Vector3 oldRotation = transform.rotation.eulerAngles;
@@ -60,13 +83,17 @@ public class PlayerController : MonoBehaviour
             ));
         }
 
-        scrollHolderTransform.position = new Vector3
-        (
-            transform.position.x,
-            scrollHolderTransform.position.y,
-            transform.position.z
-        );
+    }
 
-        rb.velocity = transform.forward * speed;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Missile")
+        {
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
+            GameObject gameController = objs[0];
+            GameController controllerScript = gameController.GetComponent<GameController>();
+            controllerScript.HandleDestroyShip();
+        }
+
     }
 }
