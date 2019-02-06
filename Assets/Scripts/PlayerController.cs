@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float tilt;
     public float degreesRotatePerFrame;
+    public Vector3 missileTarget;
+    public float missileTargetUpdateThreshold;
 
     public Joystick joystick;
     public Transform scrollHolderTransform;
@@ -14,9 +16,11 @@ public class PlayerController : MonoBehaviour
     public GameObject explosionPrefab;
 
     private Rigidbody rb;
+    private GameController gameController;
 
     private float oldRotationZ;
     private bool isPlaying = false;
+    private float lastMissileTargetSetTime;
 
     public void SetPlayingMode(bool isPlaying)
     {
@@ -31,7 +35,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        lastMissileTargetSetTime = Time.time;
         rb = GetComponent<Rigidbody>();
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
+        GameObject controller = objs[0];
+        gameController = controller.GetComponent<GameController>();
     }
 
     private void FixedUpdate()
@@ -51,6 +59,12 @@ public class PlayerController : MonoBehaviour
         Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
 
         Vector3 oldRotation = transform.rotation.eulerAngles;
+
+        if (Time.time - lastMissileTargetSetTime >= missileTargetUpdateThreshold)
+        {
+            lastMissileTargetSetTime = Time.time;
+            missileTarget = transform.position + transform.forward * 1f;
+        }
 
         if (moveVector != Vector3.zero)
         {
@@ -91,11 +105,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Missile")
         {
-            GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
-            GameObject gameController = objs[0];
-            GameController controllerScript = gameController.GetComponent<GameController>();
-            controllerScript.HandleDestroyShip();
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            gameController.HandleDestroyShip();
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(explosion, 10f);
+        }
+        else if (other.gameObject.tag == "Coin")
+        {
+            Destroy(other.gameObject);
+            gameController.HandleCoinCollect();
         }
 
     }

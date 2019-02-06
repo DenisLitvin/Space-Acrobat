@@ -7,8 +7,9 @@ public class MissileController : MonoBehaviour
     public GameObject sign;
     public Canvas canvas;
 
+    public GameObject coinPrefab;
     public GameObject explosionPrefab;
-    public Transform playerTransform;
+    public PlayerController playerController;
 
     public float degreesRotatePerFrame;
     public float speed;
@@ -69,7 +70,7 @@ public class MissileController : MonoBehaviour
     private void Rotate()
     {
         rb = GetComponent<Rigidbody>();
-        Vector3 toPlayer = (playerTransform.position - rb.transform.position).normalized;
+        Vector3 toPlayer = (playerController.missileTarget - rb.transform.position).normalized;
         Vector3 lookRotation = Quaternion.LookRotation(toPlayer).eulerAngles;
         Vector3 oldRotation = rb.rotation.eulerAngles;
 
@@ -109,6 +110,16 @@ public class MissileController : MonoBehaviour
         if (other.gameObject.tag == "Missile")
         {
             Destroy();
+            SpawnCoin();
+        }
+    }
+
+    private void SpawnCoin()
+    {
+        float rand = Random.Range(0f, 1f);
+        if (rand < 1f)
+        {
+            Instantiate(coinPrefab, transform.position, coinPrefab.transform.rotation);
         }
     }
 }

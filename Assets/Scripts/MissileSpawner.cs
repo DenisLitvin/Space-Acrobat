@@ -7,6 +7,7 @@ public class MissileSpawner : MonoBehaviour
     public Canvas canvas;
 
     public GameObject signPrefab;
+    public GameObject coinPrefab;
     public GameObject missilePrefab;
     public GameObject missileExplosionPrefab;
 
@@ -28,11 +29,12 @@ public class MissileSpawner : MonoBehaviour
             GameObject missile = Instantiate(missilePrefab, pos, rot);
 
             MissileController controller = missile.GetComponent<MissileController>();
-            controller.playerTransform = playerTransform;
+            controller.playerController = playerTransform.GetComponent<PlayerController>();
             controller.explosionPrefab = missileExplosionPrefab;
             GameObject sign = Instantiate(signPrefab, Vector3.zero, Quaternion.identity);
             sign.transform.SetParent(canvas.transform, false);
             controller.sign = sign;
+            controller.coinPrefab = coinPrefab;
             controller.canvas = canvas;
         }
     }

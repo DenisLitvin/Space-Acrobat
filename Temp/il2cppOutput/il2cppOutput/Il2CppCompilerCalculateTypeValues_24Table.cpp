@@ -24,6 +24,10 @@
 struct GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3;
 // MissileSpawner
 struct MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF;
+// PlanetSpawner
+struct PlanetSpawner_t51217BA51B5FF9DCB3C744137E1D8CC3984769EE;
+// PlayerController
+struct PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85;
 // System.AsyncCallback
 struct AsyncCallback_t3F3DA3BEDAEE81DD1D24125DF8EB30E85EE14DA4;
 // System.Byte[]
@@ -95,7 +99,7 @@ struct UnityAction_1_tD07424D822F8527D240A320A1866C70C835C7C99;
 // UnityEngine.GameObject
 struct GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F;
 // UnityEngine.GameObject[]
-struct GameObjectU5BU5D_t30E337C5B5FBBCBAEDAF4093924D916CF2944067;
+struct GameObjectU5BU5D_tBF9D474747511CF34A040A1697E34C74C19BB520;
 // UnityEngine.Material
 struct Material_tF7DB3BF0C24DEC2FE0CB51E5DF5053D5223C8598;
 // UnityEngine.Mesh
@@ -236,27 +240,27 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEOBJECT_H
-#ifndef U3CSPAWNMISSILESU3ED__5_TA2D757EB6F30FC6FBD2A02D775417FF230AD3E92_H
-#define U3CSPAWNMISSILESU3ED__5_TA2D757EB6F30FC6FBD2A02D775417FF230AD3E92_H
+#ifndef U3CACTIVATEINTERFACEU3ED__22_TB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE_H
+#define U3CACTIVATEINTERFACEU3ED__22_TB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// GameController/<SpawnMissiles>d__5
-struct  U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92  : public RuntimeObject
+// GameController/<ActivateInterface>d__22
+struct  U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE  : public RuntimeObject
 {
 public:
-	// System.Int32 GameController/<SpawnMissiles>d__5::<>1__state
+	// System.Int32 GameController/<ActivateInterface>d__22::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameController/<SpawnMissiles>d__5::<>2__current
+	// System.Object GameController/<ActivateInterface>d__22::<>2__current
 	RuntimeObject * ___U3CU3E2__current_1;
-	// GameController GameController/<SpawnMissiles>d__5::<>4__this
+	// GameController GameController/<ActivateInterface>d__22::<>4__this
 	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * ___U3CU3E4__this_2;
 
 public:
-	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92, ___U3CU3E1__state_0)); }
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE, ___U3CU3E1__state_0)); }
 	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
 	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
 	inline void set_U3CU3E1__state_0(int32_t value)
@@ -264,7 +268,7 @@ public:
 		___U3CU3E1__state_0 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CU3E2__current_1() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92, ___U3CU3E2__current_1)); }
+	inline static int32_t get_offset_of_U3CU3E2__current_1() { return static_cast<int32_t>(offsetof(U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE, ___U3CU3E2__current_1)); }
 	inline RuntimeObject * get_U3CU3E2__current_1() const { return ___U3CU3E2__current_1; }
 	inline RuntimeObject ** get_address_of_U3CU3E2__current_1() { return &___U3CU3E2__current_1; }
 	inline void set_U3CU3E2__current_1(RuntimeObject * value)
@@ -273,7 +277,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___U3CU3E2__current_1), value);
 	}
 
-	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92, ___U3CU3E4__this_2)); }
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE, ___U3CU3E4__this_2)); }
 	inline GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
 	inline GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
 	inline void set_U3CU3E4__this_2(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * value)
@@ -286,7 +290,58 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CSPAWNMISSILESU3ED__5_TA2D757EB6F30FC6FBD2A02D775417FF230AD3E92_H
+#endif // U3CACTIVATEINTERFACEU3ED__22_TB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE_H
+#ifndef U3CSPAWNMISSILESU3ED__24_TDC46AE024753B85612EE0627014E44B9D5853A2B_H
+#define U3CSPAWNMISSILESU3ED__24_TDC46AE024753B85612EE0627014E44B9D5853A2B_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// GameController/<SpawnMissiles>d__24
+struct  U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B  : public RuntimeObject
+{
+public:
+	// System.Int32 GameController/<SpawnMissiles>d__24::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Object GameController/<SpawnMissiles>d__24::<>2__current
+	RuntimeObject * ___U3CU3E2__current_1;
+	// GameController GameController/<SpawnMissiles>d__24::<>4__this
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * ___U3CU3E4__this_2;
+
+public:
+	inline static int32_t get_offset_of_U3CU3E1__state_0() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B, ___U3CU3E1__state_0)); }
+	inline int32_t get_U3CU3E1__state_0() const { return ___U3CU3E1__state_0; }
+	inline int32_t* get_address_of_U3CU3E1__state_0() { return &___U3CU3E1__state_0; }
+	inline void set_U3CU3E1__state_0(int32_t value)
+	{
+		___U3CU3E1__state_0 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CU3E2__current_1() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B, ___U3CU3E2__current_1)); }
+	inline RuntimeObject * get_U3CU3E2__current_1() const { return ___U3CU3E2__current_1; }
+	inline RuntimeObject ** get_address_of_U3CU3E2__current_1() { return &___U3CU3E2__current_1; }
+	inline void set_U3CU3E2__current_1(RuntimeObject * value)
+	{
+		___U3CU3E2__current_1 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E2__current_1), value);
+	}
+
+	inline static int32_t get_offset_of_U3CU3E4__this_2() { return static_cast<int32_t>(offsetof(U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B, ___U3CU3E4__this_2)); }
+	inline GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * get_U3CU3E4__this_2() const { return ___U3CU3E4__this_2; }
+	inline GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 ** get_address_of_U3CU3E4__this_2() { return &___U3CU3E4__this_2; }
+	inline void set_U3CU3E4__this_2(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3 * value)
+	{
+		___U3CU3E4__this_2 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CU3E4__this_2), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // U3CSPAWNMISSILESU3ED__24_TDC46AE024753B85612EE0627014E44B9D5853A2B_H
 #ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #ifdef __clang__
@@ -4290,48 +4345,141 @@ struct  GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3  : public MonoB
 {
 public:
 	// UnityEngine.GameObject[] GameController::spaceshipPrefabs
-	GameObjectU5BU5D_t30E337C5B5FBBCBAEDAF4093924D916CF2944067* ___spaceshipPrefabs_4;
+	GameObjectU5BU5D_tBF9D474747511CF34A040A1697E34C74C19BB520* ___spaceshipPrefabs_4;
+	// UnityEngine.GameObject GameController::uiInterface
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___uiInterface_5;
 	// UnityEngine.GameObject GameController::player
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___player_5;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___player_6;
 	// MissileSpawner GameController::missileSpawner
-	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * ___missileSpawner_6;
+	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * ___missileSpawner_7;
+	// PlanetSpawner GameController::planetSpawner
+	PlanetSpawner_t51217BA51B5FF9DCB3C744137E1D8CC3984769EE * ___planetSpawner_8;
+	// PlayerController GameController::playerControllerScript
+	PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * ___playerControllerScript_9;
 	// System.Int32 GameController::level
-	int32_t ___level_7;
+	int32_t ___level_10;
+	// System.Int32 GameController::coins
+	int32_t ___coins_11;
+	// System.Int32 GameController::currentShipPrefab
+	int32_t ___currentShipPrefab_12;
+	// System.Boolean GameController::isPlaying
+	bool ___isPlaying_13;
+	// System.Boolean GameController::firstRun
+	bool ___firstRun_14;
+	// System.Single GameController::savedShipSpeed
+	float ___savedShipSpeed_15;
+	// System.Single GameController::savedPlanetsSpeed
+	float ___savedPlanetsSpeed_16;
 
 public:
 	inline static int32_t get_offset_of_spaceshipPrefabs_4() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___spaceshipPrefabs_4)); }
-	inline GameObjectU5BU5D_t30E337C5B5FBBCBAEDAF4093924D916CF2944067* get_spaceshipPrefabs_4() const { return ___spaceshipPrefabs_4; }
-	inline GameObjectU5BU5D_t30E337C5B5FBBCBAEDAF4093924D916CF2944067** get_address_of_spaceshipPrefabs_4() { return &___spaceshipPrefabs_4; }
-	inline void set_spaceshipPrefabs_4(GameObjectU5BU5D_t30E337C5B5FBBCBAEDAF4093924D916CF2944067* value)
+	inline GameObjectU5BU5D_tBF9D474747511CF34A040A1697E34C74C19BB520* get_spaceshipPrefabs_4() const { return ___spaceshipPrefabs_4; }
+	inline GameObjectU5BU5D_tBF9D474747511CF34A040A1697E34C74C19BB520** get_address_of_spaceshipPrefabs_4() { return &___spaceshipPrefabs_4; }
+	inline void set_spaceshipPrefabs_4(GameObjectU5BU5D_tBF9D474747511CF34A040A1697E34C74C19BB520* value)
 	{
 		___spaceshipPrefabs_4 = value;
 		Il2CppCodeGenWriteBarrier((&___spaceshipPrefabs_4), value);
 	}
 
-	inline static int32_t get_offset_of_player_5() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___player_5)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_player_5() const { return ___player_5; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_player_5() { return &___player_5; }
-	inline void set_player_5(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_uiInterface_5() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___uiInterface_5)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_uiInterface_5() const { return ___uiInterface_5; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_uiInterface_5() { return &___uiInterface_5; }
+	inline void set_uiInterface_5(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___player_5 = value;
-		Il2CppCodeGenWriteBarrier((&___player_5), value);
+		___uiInterface_5 = value;
+		Il2CppCodeGenWriteBarrier((&___uiInterface_5), value);
 	}
 
-	inline static int32_t get_offset_of_missileSpawner_6() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___missileSpawner_6)); }
-	inline MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * get_missileSpawner_6() const { return ___missileSpawner_6; }
-	inline MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF ** get_address_of_missileSpawner_6() { return &___missileSpawner_6; }
-	inline void set_missileSpawner_6(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * value)
+	inline static int32_t get_offset_of_player_6() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___player_6)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_player_6() const { return ___player_6; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_player_6() { return &___player_6; }
+	inline void set_player_6(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___missileSpawner_6 = value;
-		Il2CppCodeGenWriteBarrier((&___missileSpawner_6), value);
+		___player_6 = value;
+		Il2CppCodeGenWriteBarrier((&___player_6), value);
 	}
 
-	inline static int32_t get_offset_of_level_7() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___level_7)); }
-	inline int32_t get_level_7() const { return ___level_7; }
-	inline int32_t* get_address_of_level_7() { return &___level_7; }
-	inline void set_level_7(int32_t value)
+	inline static int32_t get_offset_of_missileSpawner_7() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___missileSpawner_7)); }
+	inline MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * get_missileSpawner_7() const { return ___missileSpawner_7; }
+	inline MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF ** get_address_of_missileSpawner_7() { return &___missileSpawner_7; }
+	inline void set_missileSpawner_7(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF * value)
 	{
-		___level_7 = value;
+		___missileSpawner_7 = value;
+		Il2CppCodeGenWriteBarrier((&___missileSpawner_7), value);
+	}
+
+	inline static int32_t get_offset_of_planetSpawner_8() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___planetSpawner_8)); }
+	inline PlanetSpawner_t51217BA51B5FF9DCB3C744137E1D8CC3984769EE * get_planetSpawner_8() const { return ___planetSpawner_8; }
+	inline PlanetSpawner_t51217BA51B5FF9DCB3C744137E1D8CC3984769EE ** get_address_of_planetSpawner_8() { return &___planetSpawner_8; }
+	inline void set_planetSpawner_8(PlanetSpawner_t51217BA51B5FF9DCB3C744137E1D8CC3984769EE * value)
+	{
+		___planetSpawner_8 = value;
+		Il2CppCodeGenWriteBarrier((&___planetSpawner_8), value);
+	}
+
+	inline static int32_t get_offset_of_playerControllerScript_9() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___playerControllerScript_9)); }
+	inline PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * get_playerControllerScript_9() const { return ___playerControllerScript_9; }
+	inline PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 ** get_address_of_playerControllerScript_9() { return &___playerControllerScript_9; }
+	inline void set_playerControllerScript_9(PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * value)
+	{
+		___playerControllerScript_9 = value;
+		Il2CppCodeGenWriteBarrier((&___playerControllerScript_9), value);
+	}
+
+	inline static int32_t get_offset_of_level_10() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___level_10)); }
+	inline int32_t get_level_10() const { return ___level_10; }
+	inline int32_t* get_address_of_level_10() { return &___level_10; }
+	inline void set_level_10(int32_t value)
+	{
+		___level_10 = value;
+	}
+
+	inline static int32_t get_offset_of_coins_11() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___coins_11)); }
+	inline int32_t get_coins_11() const { return ___coins_11; }
+	inline int32_t* get_address_of_coins_11() { return &___coins_11; }
+	inline void set_coins_11(int32_t value)
+	{
+		___coins_11 = value;
+	}
+
+	inline static int32_t get_offset_of_currentShipPrefab_12() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___currentShipPrefab_12)); }
+	inline int32_t get_currentShipPrefab_12() const { return ___currentShipPrefab_12; }
+	inline int32_t* get_address_of_currentShipPrefab_12() { return &___currentShipPrefab_12; }
+	inline void set_currentShipPrefab_12(int32_t value)
+	{
+		___currentShipPrefab_12 = value;
+	}
+
+	inline static int32_t get_offset_of_isPlaying_13() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___isPlaying_13)); }
+	inline bool get_isPlaying_13() const { return ___isPlaying_13; }
+	inline bool* get_address_of_isPlaying_13() { return &___isPlaying_13; }
+	inline void set_isPlaying_13(bool value)
+	{
+		___isPlaying_13 = value;
+	}
+
+	inline static int32_t get_offset_of_firstRun_14() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___firstRun_14)); }
+	inline bool get_firstRun_14() const { return ___firstRun_14; }
+	inline bool* get_address_of_firstRun_14() { return &___firstRun_14; }
+	inline void set_firstRun_14(bool value)
+	{
+		___firstRun_14 = value;
+	}
+
+	inline static int32_t get_offset_of_savedShipSpeed_15() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___savedShipSpeed_15)); }
+	inline float get_savedShipSpeed_15() const { return ___savedShipSpeed_15; }
+	inline float* get_address_of_savedShipSpeed_15() { return &___savedShipSpeed_15; }
+	inline void set_savedShipSpeed_15(float value)
+	{
+		___savedShipSpeed_15 = value;
+	}
+
+	inline static int32_t get_offset_of_savedPlanetsSpeed_16() { return static_cast<int32_t>(offsetof(GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3, ___savedPlanetsSpeed_16)); }
+	inline float get_savedPlanetsSpeed_16() const { return ___savedPlanetsSpeed_16; }
+	inline float* get_address_of_savedPlanetsSpeed_16() { return &___savedPlanetsSpeed_16; }
+	inline void set_savedPlanetsSpeed_16(float value)
+	{
+		___savedPlanetsSpeed_16 = value;
 	}
 };
 
@@ -4351,79 +4499,101 @@ public:
 struct  MissileController_t00541937DA8E984F65B35C796E2A26960D58465E  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
 {
 public:
+	// UnityEngine.GameObject MissileController::sign
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___sign_4;
+	// UnityEngine.Canvas MissileController::canvas
+	Canvas_tBC28BF1DD8D8499A89B5781505833D3728CF8591 * ___canvas_5;
 	// UnityEngine.GameObject MissileController::explosionPrefab
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___explosionPrefab_4;
-	// UnityEngine.Transform MissileController::playerTransform
-	Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * ___playerTransform_5;
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___explosionPrefab_6;
+	// PlayerController MissileController::playerController
+	PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * ___playerController_7;
 	// System.Single MissileController::degreesRotatePerFrame
-	float ___degreesRotatePerFrame_6;
+	float ___degreesRotatePerFrame_8;
 	// System.Single MissileController::speed
-	float ___speed_7;
+	float ___speed_9;
 	// System.Single MissileController::magnetSpeed
-	float ___magnetSpeed_8;
+	float ___magnetSpeed_10;
 	// System.Single MissileController::magnetRadius
-	float ___magnetRadius_9;
+	float ___magnetRadius_11;
 	// UnityEngine.Rigidbody MissileController::rb
-	Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * ___rb_10;
+	Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * ___rb_12;
 
 public:
-	inline static int32_t get_offset_of_explosionPrefab_4() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___explosionPrefab_4)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_explosionPrefab_4() const { return ___explosionPrefab_4; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_explosionPrefab_4() { return &___explosionPrefab_4; }
-	inline void set_explosionPrefab_4(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+	inline static int32_t get_offset_of_sign_4() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___sign_4)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_sign_4() const { return ___sign_4; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_sign_4() { return &___sign_4; }
+	inline void set_sign_4(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___explosionPrefab_4 = value;
-		Il2CppCodeGenWriteBarrier((&___explosionPrefab_4), value);
+		___sign_4 = value;
+		Il2CppCodeGenWriteBarrier((&___sign_4), value);
 	}
 
-	inline static int32_t get_offset_of_playerTransform_5() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___playerTransform_5)); }
-	inline Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * get_playerTransform_5() const { return ___playerTransform_5; }
-	inline Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA ** get_address_of_playerTransform_5() { return &___playerTransform_5; }
-	inline void set_playerTransform_5(Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * value)
+	inline static int32_t get_offset_of_canvas_5() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___canvas_5)); }
+	inline Canvas_tBC28BF1DD8D8499A89B5781505833D3728CF8591 * get_canvas_5() const { return ___canvas_5; }
+	inline Canvas_tBC28BF1DD8D8499A89B5781505833D3728CF8591 ** get_address_of_canvas_5() { return &___canvas_5; }
+	inline void set_canvas_5(Canvas_tBC28BF1DD8D8499A89B5781505833D3728CF8591 * value)
 	{
-		___playerTransform_5 = value;
-		Il2CppCodeGenWriteBarrier((&___playerTransform_5), value);
+		___canvas_5 = value;
+		Il2CppCodeGenWriteBarrier((&___canvas_5), value);
 	}
 
-	inline static int32_t get_offset_of_degreesRotatePerFrame_6() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___degreesRotatePerFrame_6)); }
-	inline float get_degreesRotatePerFrame_6() const { return ___degreesRotatePerFrame_6; }
-	inline float* get_address_of_degreesRotatePerFrame_6() { return &___degreesRotatePerFrame_6; }
-	inline void set_degreesRotatePerFrame_6(float value)
+	inline static int32_t get_offset_of_explosionPrefab_6() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___explosionPrefab_6)); }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_explosionPrefab_6() const { return ___explosionPrefab_6; }
+	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_explosionPrefab_6() { return &___explosionPrefab_6; }
+	inline void set_explosionPrefab_6(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
 	{
-		___degreesRotatePerFrame_6 = value;
+		___explosionPrefab_6 = value;
+		Il2CppCodeGenWriteBarrier((&___explosionPrefab_6), value);
 	}
 
-	inline static int32_t get_offset_of_speed_7() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___speed_7)); }
-	inline float get_speed_7() const { return ___speed_7; }
-	inline float* get_address_of_speed_7() { return &___speed_7; }
-	inline void set_speed_7(float value)
+	inline static int32_t get_offset_of_playerController_7() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___playerController_7)); }
+	inline PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * get_playerController_7() const { return ___playerController_7; }
+	inline PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 ** get_address_of_playerController_7() { return &___playerController_7; }
+	inline void set_playerController_7(PlayerController_t4CE339054014370D89B89922EDC0EA2766589C85 * value)
 	{
-		___speed_7 = value;
+		___playerController_7 = value;
+		Il2CppCodeGenWriteBarrier((&___playerController_7), value);
 	}
 
-	inline static int32_t get_offset_of_magnetSpeed_8() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___magnetSpeed_8)); }
-	inline float get_magnetSpeed_8() const { return ___magnetSpeed_8; }
-	inline float* get_address_of_magnetSpeed_8() { return &___magnetSpeed_8; }
-	inline void set_magnetSpeed_8(float value)
+	inline static int32_t get_offset_of_degreesRotatePerFrame_8() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___degreesRotatePerFrame_8)); }
+	inline float get_degreesRotatePerFrame_8() const { return ___degreesRotatePerFrame_8; }
+	inline float* get_address_of_degreesRotatePerFrame_8() { return &___degreesRotatePerFrame_8; }
+	inline void set_degreesRotatePerFrame_8(float value)
 	{
-		___magnetSpeed_8 = value;
+		___degreesRotatePerFrame_8 = value;
 	}
 
-	inline static int32_t get_offset_of_magnetRadius_9() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___magnetRadius_9)); }
-	inline float get_magnetRadius_9() const { return ___magnetRadius_9; }
-	inline float* get_address_of_magnetRadius_9() { return &___magnetRadius_9; }
-	inline void set_magnetRadius_9(float value)
+	inline static int32_t get_offset_of_speed_9() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___speed_9)); }
+	inline float get_speed_9() const { return ___speed_9; }
+	inline float* get_address_of_speed_9() { return &___speed_9; }
+	inline void set_speed_9(float value)
 	{
-		___magnetRadius_9 = value;
+		___speed_9 = value;
 	}
 
-	inline static int32_t get_offset_of_rb_10() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___rb_10)); }
-	inline Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * get_rb_10() const { return ___rb_10; }
-	inline Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 ** get_address_of_rb_10() { return &___rb_10; }
-	inline void set_rb_10(Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * value)
+	inline static int32_t get_offset_of_magnetSpeed_10() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___magnetSpeed_10)); }
+	inline float get_magnetSpeed_10() const { return ___magnetSpeed_10; }
+	inline float* get_address_of_magnetSpeed_10() { return &___magnetSpeed_10; }
+	inline void set_magnetSpeed_10(float value)
 	{
-		___rb_10 = value;
-		Il2CppCodeGenWriteBarrier((&___rb_10), value);
+		___magnetSpeed_10 = value;
+	}
+
+	inline static int32_t get_offset_of_magnetRadius_11() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___magnetRadius_11)); }
+	inline float get_magnetRadius_11() const { return ___magnetRadius_11; }
+	inline float* get_address_of_magnetRadius_11() { return &___magnetRadius_11; }
+	inline void set_magnetRadius_11(float value)
+	{
+		___magnetRadius_11 = value;
+	}
+
+	inline static int32_t get_offset_of_rb_12() { return static_cast<int32_t>(offsetof(MissileController_t00541937DA8E984F65B35C796E2A26960D58465E, ___rb_12)); }
+	inline Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * get_rb_12() const { return ___rb_12; }
+	inline Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 ** get_address_of_rb_12() { return &___rb_12; }
+	inline void set_rb_12(Rigidbody_tE0A58EE5A1F7DC908EFFB4F0D795AC9552A750A5 * value)
+	{
+		___rb_12 = value;
+		Il2CppCodeGenWriteBarrier((&___rb_12), value);
 	}
 };
 
@@ -4431,68 +4601,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // MISSILECONTROLLER_T00541937DA8E984F65B35C796E2A26960D58465E_H
-#ifndef MISSILESPAWNER_TFF92A84A7194D33673BAAEFD79827B9EE78EEFDF_H
-#define MISSILESPAWNER_TFF92A84A7194D33673BAAEFD79827B9EE78EEFDF_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// MissileSpawner
-struct  MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF  : public MonoBehaviour_t4A60845CF505405AF8BE8C61CC07F75CADEF6429
-{
-public:
-	// UnityEngine.GameObject MissileSpawner::missilePrefab
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___missilePrefab_4;
-	// UnityEngine.GameObject MissileSpawner::missileExplosionPrefab
-	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___missileExplosionPrefab_5;
-	// UnityEngine.Transform MissileSpawner::playerTransform
-	Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * ___playerTransform_6;
-	// System.Single MissileSpawner::radius
-	float ___radius_7;
-
-public:
-	inline static int32_t get_offset_of_missilePrefab_4() { return static_cast<int32_t>(offsetof(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF, ___missilePrefab_4)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_missilePrefab_4() const { return ___missilePrefab_4; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_missilePrefab_4() { return &___missilePrefab_4; }
-	inline void set_missilePrefab_4(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
-	{
-		___missilePrefab_4 = value;
-		Il2CppCodeGenWriteBarrier((&___missilePrefab_4), value);
-	}
-
-	inline static int32_t get_offset_of_missileExplosionPrefab_5() { return static_cast<int32_t>(offsetof(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF, ___missileExplosionPrefab_5)); }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_missileExplosionPrefab_5() const { return ___missileExplosionPrefab_5; }
-	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_missileExplosionPrefab_5() { return &___missileExplosionPrefab_5; }
-	inline void set_missileExplosionPrefab_5(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
-	{
-		___missileExplosionPrefab_5 = value;
-		Il2CppCodeGenWriteBarrier((&___missileExplosionPrefab_5), value);
-	}
-
-	inline static int32_t get_offset_of_playerTransform_6() { return static_cast<int32_t>(offsetof(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF, ___playerTransform_6)); }
-	inline Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * get_playerTransform_6() const { return ___playerTransform_6; }
-	inline Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA ** get_address_of_playerTransform_6() { return &___playerTransform_6; }
-	inline void set_playerTransform_6(Transform_tBB9E78A2766C3C83599A8F66EDE7D1FCAFC66EDA * value)
-	{
-		___playerTransform_6 = value;
-		Il2CppCodeGenWriteBarrier((&___playerTransform_6), value);
-	}
-
-	inline static int32_t get_offset_of_radius_7() { return static_cast<int32_t>(offsetof(MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF, ___radius_7)); }
-	inline float get_radius_7() const { return ___radius_7; }
-	inline float* get_address_of_radius_7() { return &___radius_7; }
-	inline void set_radius_7(float value)
-	{
-		___radius_7 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // MISSILESPAWNER_TFF92A84A7194D33673BAAEFD79827B9EE78EEFDF_H
 #ifndef UIBEHAVIOUR_T3C3C339CD5677BA7FC27C352FED8B78052A3FE70_H
 #define UIBEHAVIOUR_T3C3C339CD5677BA7FC27C352FED8B78052A3FE70_H
 #ifdef __clang__
@@ -7583,38 +7691,48 @@ extern const int32_t g_FieldOffsetTable2494[3] =
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2495 = { sizeof (ExplosionController_tEC71757598731746F88BD4E857573AF14D366634), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2496 = { sizeof (GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2496[4] = 
+extern const int32_t g_FieldOffsetTable2496[13] = 
 {
 	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_spaceshipPrefabs_4(),
-	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_player_5(),
-	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_missileSpawner_6(),
-	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_level_7(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_uiInterface_5(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_player_6(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_missileSpawner_7(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_planetSpawner_8(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_playerControllerScript_9(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_level_10(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_coins_11(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_currentShipPrefab_12(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_isPlaying_13(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_firstRun_14(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_savedShipSpeed_15(),
+	GameController_t8BB0D3CE8992C95BED5FB508588730F0A74009A3::get_offset_of_savedPlanetsSpeed_16(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2497 = { sizeof (U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2497 = { sizeof (U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable2497[3] = 
 {
-	U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92::get_offset_of_U3CU3E1__state_0(),
-	U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92::get_offset_of_U3CU3E2__current_1(),
-	U3CSpawnMissilesU3Ed__5_tA2D757EB6F30FC6FBD2A02D775417FF230AD3E92::get_offset_of_U3CU3E4__this_2(),
+	U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE::get_offset_of_U3CU3E1__state_0(),
+	U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE::get_offset_of_U3CU3E2__current_1(),
+	U3CActivateInterfaceU3Ed__22_tB6399B7AF6882DA53EC01B0BFF8F92A8211BA6DE::get_offset_of_U3CU3E4__this_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2498 = { sizeof (MissileController_t00541937DA8E984F65B35C796E2A26960D58465E), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2498[7] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2498 = { sizeof (U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2498[3] = 
 {
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_explosionPrefab_4(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_playerTransform_5(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_degreesRotatePerFrame_6(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_speed_7(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_magnetSpeed_8(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_magnetRadius_9(),
-	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_rb_10(),
+	U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B::get_offset_of_U3CU3E1__state_0(),
+	U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B::get_offset_of_U3CU3E2__current_1(),
+	U3CSpawnMissilesU3Ed__24_tDC46AE024753B85612EE0627014E44B9D5853A2B::get_offset_of_U3CU3E4__this_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2499 = { sizeof (MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2499[4] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2499 = { sizeof (MissileController_t00541937DA8E984F65B35C796E2A26960D58465E), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2499[9] = 
 {
-	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF::get_offset_of_missilePrefab_4(),
-	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF::get_offset_of_missileExplosionPrefab_5(),
-	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF::get_offset_of_playerTransform_6(),
-	MissileSpawner_tFF92A84A7194D33673BAAEFD79827B9EE78EEFDF::get_offset_of_radius_7(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_sign_4(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_canvas_5(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_explosionPrefab_6(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_playerController_7(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_degreesRotatePerFrame_8(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_speed_9(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_magnetSpeed_10(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_magnetRadius_11(),
+	MissileController_t00541937DA8E984F65B35C796E2A26960D58465E::get_offset_of_rb_12(),
 };
 #ifdef __clang__
 #pragma clang diagnostic pop

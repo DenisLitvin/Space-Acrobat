@@ -205,8 +205,8 @@ class LocalizationAsset;
 class Material; template <> void RegisterUnityClass<Material>(const char*);
 class ProceduralMaterial; 
 class Mesh; template <> void RegisterUnityClass<Mesh>(const char*);
-class Motion; 
-class AnimationClip; 
+class Motion; template <> void RegisterUnityClass<Motion>(const char*);
+class AnimationClip; template <> void RegisterUnityClass<AnimationClip>(const char*);
 class PreviewAnimationClip; 
 class NavMeshData; 
 class OcclusionCullingData; 
@@ -214,7 +214,7 @@ class PhysicMaterial;
 class PhysicsMaterial2D; 
 class PreloadData; template <> void RegisterUnityClass<PreloadData>(const char*);
 class RuntimeAnimatorController; template <> void RegisterUnityClass<RuntimeAnimatorController>(const char*);
-class AnimatorController; 
+class AnimatorController; template <> void RegisterUnityClass<AnimatorController>(const char*);
 class AnimatorOverrideController; template <> void RegisterUnityClass<AnimatorOverrideController>(const char*);
 class SampleClip; template <> void RegisterUnityClass<SampleClip>(const char*);
 class AudioClip; template <> void RegisterUnityClass<AudioClip>(const char*);
@@ -278,7 +278,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 74 non stripped classes
+	//Total: 77 non stripped classes
 	//0. Behaviour
 	RegisterUnityClass<Behaviour>("Core");
 	//1. Unity::Component
@@ -345,38 +345,38 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Sprite>("Core");
 	//32. SpriteAtlas
 	RegisterUnityClass<SpriteAtlas>("Core");
-	//33. Rigidbody
-	RegisterUnityClass<Rigidbody>("Physics");
-	//34. Collider
-	RegisterUnityClass<Collider>("Physics");
-	//35. ParticleSystem
-	RegisterUnityClass<ParticleSystem>("ParticleSystem");
-	//36. ParticleSystemRenderer
-	RegisterUnityClass<ParticleSystemRenderer>("ParticleSystem");
-	//37. Animator
-	RegisterUnityClass<Animator>("Animation");
-	//38. AnimatorOverrideController
-	RegisterUnityClass<AnimatorOverrideController>("Animation");
-	//39. RuntimeAnimatorController
-	RegisterUnityClass<RuntimeAnimatorController>("Animation");
-	//40. AudioClip
-	RegisterUnityClass<AudioClip>("Audio");
-	//41. SampleClip
-	RegisterUnityClass<SampleClip>("Audio");
-	//42. AudioListener
-	RegisterUnityClass<AudioListener>("Audio");
-	//43. AudioBehaviour
-	RegisterUnityClass<AudioBehaviour>("Audio");
-	//44. AudioSource
-	RegisterUnityClass<AudioSource>("Audio");
-	//45. TextRendering::Font
-	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//46. UI::Canvas
+	//33. UI::Canvas
 	RegisterUnityClass<UI::Canvas>("UI");
-	//47. UI::CanvasGroup
+	//34. UI::CanvasGroup
 	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//48. UI::CanvasRenderer
+	//35. UI::CanvasRenderer
 	RegisterUnityClass<UI::CanvasRenderer>("UI");
+	//36. TextRendering::Font
+	RegisterUnityClass<TextRendering::Font>("TextRendering");
+	//37. Rigidbody
+	RegisterUnityClass<Rigidbody>("Physics");
+	//38. Collider
+	RegisterUnityClass<Collider>("Physics");
+	//39. ParticleSystem
+	RegisterUnityClass<ParticleSystem>("ParticleSystem");
+	//40. ParticleSystemRenderer
+	RegisterUnityClass<ParticleSystemRenderer>("ParticleSystem");
+	//41. Animator
+	RegisterUnityClass<Animator>("Animation");
+	//42. AnimatorOverrideController
+	RegisterUnityClass<AnimatorOverrideController>("Animation");
+	//43. RuntimeAnimatorController
+	RegisterUnityClass<RuntimeAnimatorController>("Animation");
+	//44. AudioClip
+	RegisterUnityClass<AudioClip>("Audio");
+	//45. SampleClip
+	RegisterUnityClass<SampleClip>("Audio");
+	//46. AudioListener
+	RegisterUnityClass<AudioListener>("Audio");
+	//47. AudioBehaviour
+	RegisterUnityClass<AudioBehaviour>("Audio");
+	//48. AudioSource
+	RegisterUnityClass<AudioSource>("Audio");
 	//49. TagManager
 	RegisterUnityClass<TagManager>("Core");
 	//50. GraphicsSettings
@@ -423,9 +423,15 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<CapsuleCollider>("Physics");
 	//71. Light
 	RegisterUnityClass<Light>("Core");
-	//72. RenderSettings
+	//72. Motion
+	RegisterUnityClass<Motion>("Animation");
+	//73. RenderSettings
 	RegisterUnityClass<RenderSettings>("Core");
-	//73. SphereCollider
+	//74. AnimationClip
+	RegisterUnityClass<AnimationClip>("Animation");
+	//75. AnimatorController
+	RegisterUnityClass<AnimatorController>("Animation");
+	//76. SphereCollider
 	RegisterUnityClass<SphereCollider>("Physics");
 
 }

@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{75942997-D018-8683-DFBC-0158D1B21B85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MissileSpawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CoinController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="81" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="25" Column="54" />
-      <File FileName="Assets/Scripts/MissileController.cs" Line="24" Column="35" />
-      <File FileName="Assets/Scripts/PlanetController.cs" Line="7" Column="29" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="38" Column="41" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="114" Column="39" />
+      <File FileName="Assets/Scripts/MissileController.cs" Line="113" Column="25" />
+      <File FileName="Assets/Scripts/PlanetController.cs" Line="6" Column="2" />
       <File FileName="Assets/Scripts/PlanetSpawner.cs" Line="126" Column="6" />
-      <File FileName="Assets/Scripts/MissileSpawner.cs" Line="32" Column="49" />
-      <File FileName="Assets/Scripts/UiDisplayFps.cs" Line="6" Column="26" />
+      <File FileName="Assets/Scripts/MissileSpawner.cs" Line="14" Column="25" />
+      <File FileName="Assets/Scripts/UiDisplayFps.cs" Line="8" Column="38" />
+      <File FileName="Assets/CoinController.cs" Line="10" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

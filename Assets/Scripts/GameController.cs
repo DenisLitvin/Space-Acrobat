@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,24 +8,34 @@ public class GameController : MonoBehaviour
     public GameObject[] spaceshipPrefabs;
 
     public GameObject uiInterface;
+       
+    public Text coinText;
 
     public GameObject player;
     public MissileSpawner missileSpawner;
+    public PlanetSpawner planetSpawner;
 
     private PlayerController playerControllerScript;
 
     private int level = 1;
+    private int coins = 0;
     private int currentShipPrefab = 0;
     private bool isPlaying = false;
     private bool firstRun = true;
     private float savedShipSpeed;
+    private float savedPlanetsSpeed;
 
-    void Start()
+    private void Start()
     {
         playerControllerScript = player.GetComponent<PlayerController>();
         Application.targetFrameRate = 60;
         StopGame();
         SpawnShip(0);
+    }
+
+    private void Update()
+    {
+        coinText.text = coins.ToString();
     }
 
     public void HandlePlayButton()
@@ -54,6 +65,11 @@ public class GameController : MonoBehaviour
         StopGame();
     }
 
+    public void HandleCoinCollect()
+    {
+        coins++;
+    }
+
     private void SpawnShip(int id)
     {
         GameObject shipPrefab = spaceshipPrefabs[id];
@@ -63,7 +79,9 @@ public class GameController : MonoBehaviour
 
     private void StartGame()
     {
-        level = 1;
+        level = 2;
+        savedShipSpeed = playerControllerScript.speed;
+        savedPlanetsSpeed = planetSpawner.speed;
 
         isPlaying = true;
         uiInterface.SetActive(false);
@@ -75,12 +93,13 @@ public class GameController : MonoBehaviour
     {
         if (!firstRun)
         {
-            savedShipSpeed = playerControllerScript.speed;
             playerControllerScript.speed = 0f;
+            planetSpawner.speed = 0f;
         }
         isPlaying = false;
         playerControllerScript.SetPlayingMode(false);
         RemoveShip();
+        DestroyCoins();
         StopCoroutine("SpawnMissiles");
         StartCoroutine("ActivateInterface");
     }
@@ -92,6 +111,7 @@ public class GameController : MonoBehaviour
         {
             SpawnShip(currentShipPrefab);
             playerControllerScript.speed = savedShipSpeed;
+            planetSpawner.speed = savedPlanetsSpeed;
             uiInterface.SetActive(true);
         }
         firstRun = false;
@@ -128,4 +148,13 @@ public class GameController : MonoBehaviour
             controller.Destroy();
         }
     }
+    private void DestroyCoins()
+    {
+        GameObject[] objc = GameObject.FindGameObjectsWithTag("Coin");
+        foreach (GameObject coin in objc)
+        {
+            Destroy(coin);
+        }
+    }
+
 }
