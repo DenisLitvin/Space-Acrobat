@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
-    public GameObject sign;
     public Canvas canvas;
 
+    public GameObject signPrefab;
     public GameObject coinPrefab;
     public GameObject explosionPrefab;
     public PlayerController playerController;
@@ -16,8 +16,14 @@ public class MissileController : MonoBehaviour
     public float magnetSpeed;
     public float magnetRadius;
 
-
+    private GameObject sign;
     private Rigidbody rb;
+
+    private void Start()
+    {
+        sign = Instantiate(signPrefab, Vector3.zero, Quaternion.identity);
+        sign.transform.SetParent(canvas.transform, false);
+    }
 
     public void Destroy()
     {
@@ -117,7 +123,7 @@ public class MissileController : MonoBehaviour
     private void SpawnCoin()
     {
         float rand = Random.Range(0f, 1f);
-        if (rand < 1f)
+        if (rand < 0.99f)
         {
             Instantiate(coinPrefab, transform.position, coinPrefab.transform.rotation);
         }

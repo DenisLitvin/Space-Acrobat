@@ -13,6 +13,6 @@ public class CoinController : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 7f, 0f), Space.World);
+        transform.Rotate(new Vector3(0f, 0f, rotationSpeed), Space.Self);
     }
 }

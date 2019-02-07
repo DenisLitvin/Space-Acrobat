@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d48ef9293a114aa594a73354a8e2c1a
+guid: c836403cdda954802964d6ab44dd4d4f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -11,7 +11,12 @@ ModelImporter:
     4300000: Circle
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 77a80d7aa62ae468fb8bd20236e2c6dd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
