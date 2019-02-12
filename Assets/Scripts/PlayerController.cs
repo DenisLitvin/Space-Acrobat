@@ -103,17 +103,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Missile")
+        if (isPlaying)
         {
-            gameController.HandleDestroyShip();
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(explosion, 10f);
+            if (other.gameObject.tag == "Missile")
+            {
+                isPlaying = false;
+                gameController.HandleDestroyShip();
+                GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(explosion, 10f);
+            }
+            else if (other.gameObject.tag == "Coin")
+            {
+                Destroy(other.gameObject);
+                gameController.HandleCoinCollect();
+            }
         }
-        else if (other.gameObject.tag == "Coin")
-        {
-            Destroy(other.gameObject);
-            gameController.HandleCoinCollect();
-        }
-
     }
 }

@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
         playerControllerScript = player.GetComponent<PlayerController>();
         Application.targetFrameRate = 60;
         StopGame();
+        print("ff");
         SpawnShip(0);
     }
 
@@ -46,7 +47,7 @@ public class GameController : MonoBehaviour
     public void HandleLeftArrowButton()
     {
         if (currentShipPrefab <= 0) return;
-        RemoveShip();
+        DestroyShip();
         currentShipPrefab--;
         SpawnShip(currentShipPrefab);
     }
@@ -54,7 +55,7 @@ public class GameController : MonoBehaviour
     public void HandleRightArrowButton()
     {
         if (currentShipPrefab >= spaceshipPrefabs.Length - 1) return;
-        RemoveShip();
+        DestroyShip();
         currentShipPrefab++;
         SpawnShip(currentShipPrefab);
     }
@@ -96,9 +97,8 @@ public class GameController : MonoBehaviour
             playerControllerScript.speed = 0f;
             planetSpawner.speed = 0f;
         }
-        isPlaying = false;
         playerControllerScript.SetPlayingMode(false);
-        RemoveShip();
+        DestroyShip();
         DestroyCoins();
         StopCoroutine("SpawnMissiles");
         StartCoroutine("ActivateInterface");
@@ -107,17 +107,19 @@ public class GameController : MonoBehaviour
     IEnumerator ActivateInterface()
     {
         yield return new WaitForSeconds(2f);
-        if (!firstRun)
+        if (!firstRun && isPlaying)
         {
+            isPlaying = false;
             SpawnShip(currentShipPrefab);
             playerControllerScript.speed = savedShipSpeed;
             planetSpawner.speed = savedPlanetsSpeed;
             uiInterface.SetActive(true);
         }
         firstRun = false;
+        yield break;
     }
 
-    private void RemoveShip()
+    private void DestroyShip()
     {
         int i = 0;
         while (i < player.transform.childCount)

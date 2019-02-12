@@ -5,11 +5,11 @@ using UnityEngine;
 public class MissileController : MonoBehaviour
 {
     public Canvas canvas;
+    public PlayerController playerController;
 
     public GameObject signPrefab;
     public GameObject coinPrefab;
     public GameObject explosionPrefab;
-    public PlayerController playerController;
 
     public float degreesRotatePerFrame;
     public float speed;
