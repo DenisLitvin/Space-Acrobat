@@ -7,12 +7,16 @@ public class CoinSpawner : MonoBehaviour
     public Transform playerTransform;
 
     public GameObject coinPrefab;
+    public GameObject incentivePrefab;
     public GameObject signPrefab;
 
     public float radius;
 
+    private List<GameObject> currentIncentives;
+
     private void Start()
     {
+        currentIncentives = new List<GameObject>();
         StartCoroutine("SpawningCoins");
     }
 
@@ -20,8 +24,17 @@ public class CoinSpawner : MonoBehaviour
     {
         while (true)
         {
-            SpawnCoins(10);
             yield return new WaitForSeconds(10f);
+            RemoveCurrentIncentives();
+            SpawnCoins(10);
+        }
+    }
+
+    private void RemoveCurrentIncentives()
+    {
+        for (int i = 0; i < currentIncentives.Count; i++)
+        {
+            Destroy(currentIncentives[i]);
         }
     }
 
@@ -34,12 +47,16 @@ public class CoinSpawner : MonoBehaviour
         Vector3 pos = playerTransform.position + new Vector3(offset.x, 0f, offset.y);
         pos.y = 0f;
 
+        GameObject incentive = Instantiate(incentivePrefab, pos, Quaternion.identity);
+        currentIncentives.Add(incentive);
+
         float coinOffset = 1f;
 
         for (int i = 0; i < num; i++)
         {
             Vector3 coinPosition = new Vector3(pos.x + i * coinOffset, pos.y, pos.z);
-            Instantiate(coinPrefab, coinPosition, coinPrefab.transform.rotation);
+            GameObject obj = Instantiate(coinPrefab, coinPosition, coinPrefab.transform.rotation);
+            currentIncentives.Add(obj);
         }
     }
 }

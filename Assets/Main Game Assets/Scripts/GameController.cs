@@ -86,7 +86,7 @@ public class GameController : MonoBehaviour
         isPlaying = true;
         uiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
-        StartCoroutine("SpawnMissiles");
+        //StartCoroutine("SpawnMissiles");
     }
 
     private void StopGame()

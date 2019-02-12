@@ -16,9 +16,14 @@ public class IncentiveController : MonoBehaviour
         sign.transform.SetParent(canvas.transform, false);
     }
 
-    void Update()
+    private void Update()
     {
+        TraceSign();
+    }
 
+    private void OnDestroy()
+    {
+        Destroy(sign);
     }
 
     private void TraceSign()
@@ -30,17 +35,17 @@ public class IncentiveController : MonoBehaviour
 
         if (sign.activeSelf)
         {
-            //RectTransform signRect = sign.GetComponent<RectTransform>();
-            //RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+            RectTransform signRect = sign.GetComponent<RectTransform>();
+            RectTransform canvasRect = canvas.GetComponent<RectTransform>();
 
-            //float x = Mathf.Max(Mathf.Min(screenPoint.x, 0.93f), 0.07f);
-            //float y = Mathf.Max(Mathf.Min(screenPoint.y, 0.9f), 0.05f);
+            float x = Mathf.Max(Mathf.Min(screenPoint.x, 0.93f), 0.07f);
+            float y = Mathf.Max(Mathf.Min(screenPoint.y, 0.9f), 0.05f);
 
-            //Vector2 screenPosition = new Vector2(
-            //    x * canvasRect.sizeDelta.x,
-            //    y * canvasRect.sizeDelta.y
-            //);
-            //signRect.anchoredPosition = screenPosition;
+            Vector2 screenPosition = new Vector2(
+                x * canvasRect.sizeDelta.x,
+                y * canvasRect.sizeDelta.y
+            );
+            signRect.anchoredPosition = screenPosition;
         }
     }
 }
