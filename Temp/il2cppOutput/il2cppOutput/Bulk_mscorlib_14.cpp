@@ -351,6 +351,8 @@ struct SecurityPermissionAttribute_t5CC17730B1C5C24D3D705B1FEB7045080924E12F;
 struct Evidence_t58C8D73D9B4FC7DD3BDDEE37E3C283678BFDC307;
 // System.Security.Policy.Evidence/EvidenceEnumerator
 struct EvidenceEnumerator_t6E9E6856C90081E4B1A731097D6FE1D14EC680B3;
+// System.Security.SecurityCriticalAttribute
+struct SecurityCriticalAttribute_tD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07;
 // System.Security.SecurityDocument
 struct SecurityDocument_tD36A817ED1ADDDBF197C5DF420B1537F911C8C05;
 // System.Security.SecurityElement
@@ -7228,6 +7230,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // SECURITYATTRIBUTE_T9F1DB5B572D6E2D518A2F186A21522667521B195_H
+#ifndef SECURITYCRITICALATTRIBUTE_TD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07_H
+#define SECURITYCRITICALATTRIBUTE_TD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Security.SecurityCriticalAttribute
+struct  SecurityCriticalAttribute_tD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SECURITYCRITICALATTRIBUTE_TD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07_H
 #ifndef UNVERIFIABLECODEATTRIBUTE_T59CB2C1D52D2F3A36B1A173988BE2DE3A6971043_H
 #define UNVERIFIABLECODEATTRIBUTE_T59CB2C1D52D2F3A36B1A173988BE2DE3A6971043_H
 #ifdef __clang__
@@ -13384,6 +13406,8 @@ extern "C" IL2CPP_METHOD_ATTR ByteU5BU5D_tD06FDBE8142446525DF1C40351D523A2283738
 extern "C" IL2CPP_METHOD_ATTR X509CertificateImpl_t89610BFDE87B872143A4623CFC7F17275EB48313 * X509Helper_Import_m53A8B58ABEECED46C9FDA29CA471B7541A7D7F63 (ByteU5BU5D_tD06FDBE8142446525DF1C40351D523A228373821* ___rawData0, const RuntimeMethod* method);
 // System.Void System.Security.Policy.Evidence/EvidenceEnumerator::.ctor(System.Collections.IEnumerator,System.Collections.IEnumerator)
 extern "C" IL2CPP_METHOD_ATTR void EvidenceEnumerator__ctor_mD4153081415054237617C4E5AFAA036445E6A43B (EvidenceEnumerator_t6E9E6856C90081E4B1A731097D6FE1D14EC680B3 * __this, RuntimeObject* ___hostenum0, RuntimeObject* ___assemblyenum1, const RuntimeMethod* method);
+// System.Void System.Attribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0 (Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74 * __this, const RuntimeMethod* method);
 // System.Void System.Array::Copy(System.Array,System.Int32,System.Array,System.Int32,System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void Array_Copy_mA10D079DD8D9700CA44721A219A934A2397653F6 (RuntimeArray * ___sourceArray0, int32_t ___sourceIndex1, RuntimeArray * ___destinationArray2, int32_t ___destinationIndex3, int32_t ___length4, const RuntimeMethod* method);
 // System.Void System.Security.SecurityDocument::GuaranteeSize(System.Int32)
@@ -13504,8 +13528,6 @@ extern "C" IL2CPP_METHOD_ATTR void SystemException__ctor_mA18D2EA5642C066F35CB8C
 extern "C" IL2CPP_METHOD_ATTR void Exception_GetObjectData_m76F759ED00FA218FFC522C32626B851FDE849AD6 (Exception_t * __this, SerializationInfo_t1BB80E9C9DEA52DBF464487234B045E2930ADA26 * ___info0, StreamingContext_t2CCDC54E0E8D078AF4A50E3A8B921B828A900034  ___context1, const RuntimeMethod* method);
 // System.String System.Exception::ToString()
 extern "C" IL2CPP_METHOD_ATTR String_t* Exception_ToString_m403BC2DBD48C830789D6270B4E917AB2D5E88183 (Exception_t * __this, const RuntimeMethod* method);
-// System.Void System.Attribute::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0 (Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74 * __this, const RuntimeMethod* method);
 // System.Security.SecurityElement System.Security.SecurityDocument::GetRootElement()
 extern "C" IL2CPP_METHOD_ATTR SecurityElement_t6C5746EF572788E5111C20BA18526087574CCDD7 * SecurityDocument_GetRootElement_mB94E25E683F3A7F5DB292FC0A1BBAFB974048BD7 (SecurityDocument_tD36A817ED1ADDDBF197C5DF420B1537F911C8C05 * __this, const RuntimeMethod* method);
 // System.Int16 System.Security.Util.TokenizerStream::GetNextToken()
@@ -16735,6 +16757,22 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject * EvidenceEnumerator_get_Current_m37
 		NullCheck(L_0);
 		RuntimeObject * L_1 = InterfaceFuncInvoker0< RuntimeObject * >::Invoke(1 /* System.Object System.Collections.IEnumerator::get_Current() */, IEnumerator_t8789118187258CC88B77AFAC6315B5AF87D3E18A_il2cpp_TypeInfo_var, L_0);
 		return L_1;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void System.Security.SecurityCriticalAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void SecurityCriticalAttribute__ctor_mFBB68DD8E1ACE07229E9EA179BC1CD19F3412A73 (SecurityCriticalAttribute_tD4DA2F7A3B4140EABE6415FF8FF6EE279CC8FC07 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+		return;
 	}
 }
 #ifdef __clang__

@@ -1375,6 +1375,7 @@ extern const RuntimeMethod* RuntimePropertyInfo_GetObjectData_mBF722CE791124C868
 extern const RuntimeMethod* RuntimeResourceSet_GetEnumeratorHelper_m15ED969AD90F7F9906AC8AB086DACD9F8C44203F_RuntimeMethod_var;
 extern const RuntimeMethod* RuntimeResourceSet_GetObject_mF51E5B04E39C773FCA4171BB9FFE99531ADC8307_RuntimeMethod_var;
 extern const RuntimeMethod* RuntimeWrappedException_GetObjectData_mE49DE2A8D72893935E2C747ED7D726FA9A7A5282_RuntimeMethod_var;
+extern const RuntimeMethod* RuntimeWrappedException__ctor_mCE5F6DC924AC39EE3B908514BF324941E3FB00A9_RuntimeMethod_var;
 extern const RuntimeMethod* SafeBuffer_AcquirePointer_mD2A94F6258AB8805DFE25E1FA39B5B11B544A4E6_RuntimeMethod_var;
 extern const RuntimeMethod* SafeBuffer_ReleasePointer_m27C2B7F09E29271161CB2987088305220F3E227D_RuntimeMethod_var;
 extern const RuntimeMethod* SafeHandle_DangerousAddRef_m38ABCE4B3DF7CEA3B6C79996C22E1D532E10F085_RuntimeMethod_var;
@@ -1560,7 +1561,6 @@ extern const uint32_t GCHandle_AddrOfPinnedObject_mA20090CB8274F28D087A6E8AD36D3
 extern const uint32_t GCHandle_Equals_m9F3AFCE77E2A8601073DA0D0C158BF618369A842_MetadataUsageId;
 extern const uint32_t GCHandle_Free_m392ECC9B1058E35A0FD5CF21A65F212873FC26F0_MetadataUsageId;
 extern const uint32_t GCHandle_get_Target_mDBDEA6883245CF1EF963D9FA945569B2D59DCCF8_MetadataUsageId;
-extern const uint32_t Identity_get_ClientDynamicProperties_m0CCE31D0AA06ECE1BC76B1B214C5DC34C7BBE228_MetadataUsageId;
 extern const uint32_t ManifestBasedResourceGroveler_GetNeutralResourcesLanguageAttribute_m090B3FA8F5A3DA6028C4EDF9F8970E8AF0913E34_MetadataUsageId;
 extern const uint32_t ManifestBasedResourceGroveler_GetNeutralResourcesLanguage_mA24984FDA62CA9C66C74FACBFAE5BD703167A3EB_MetadataUsageId;
 extern const uint32_t MarshalAsAttribute_Copy_m916673AE615990412F36D1F15D4B0BE9E7512B19_MetadataUsageId;
@@ -1635,6 +1635,7 @@ extern const uint32_t RuntimeResourceSet__ctor_m1B73A2C81E85ACE4DA7E09C1B2A95E44
 extern const uint32_t RuntimeResourceSet__ctor_m531D864E5A93D9BEFD6E453BA71BCE552B1DFD8B_MetadataUsageId;
 extern const uint32_t RuntimeWrappedException_GetObjectData_mE49DE2A8D72893935E2C747ED7D726FA9A7A5282_MetadataUsageId;
 extern const uint32_t RuntimeWrappedException__ctor_m7894F8EBAC024C43D876872091B6A42DA9BF7A25_MetadataUsageId;
+extern const uint32_t RuntimeWrappedException__ctor_mCE5F6DC924AC39EE3B908514BF324941E3FB00A9_MetadataUsageId;
 extern const uint32_t RuntimeWrappedException__ctor_mD5B2616125E824F934A3E24EEA5D2EA0A5F3E66A_MetadataUsageId;
 extern const uint32_t SafeBuffer_AcquirePointer_mD2A94F6258AB8805DFE25E1FA39B5B11B544A4E6_MetadataUsageId;
 extern const uint32_t SafeBuffer_ReleasePointer_m27C2B7F09E29271161CB2987088305220F3E227D_MetadataUsageId;
@@ -31631,6 +31632,20 @@ extern "C" IL2CPP_METHOD_ATTR void RuntimeWrappedException__ctor_mD5B2616125E824
 		return;
 	}
 }
+// System.Void System.Runtime.CompilerServices.RuntimeWrappedException::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void RuntimeWrappedException__ctor_mCE5F6DC924AC39EE3B908514BF324941E3FB00A9 (RuntimeWrappedException_t5E7538D9FD99A8A0FB32B396776E294A29866C0D * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (RuntimeWrappedException__ctor_mCE5F6DC924AC39EE3B908514BF324941E3FB00A9_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(RuntimeWrappedException__ctor_mCE5F6DC924AC39EE3B908514BF324941E3FB00A9_RuntimeMethod_var);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -45064,225 +45079,6 @@ extern "C" IL2CPP_METHOD_ATTR RuntimeObject* EnvoyInfo_get_EnvoySinks_m018A6F246
 	{
 		RuntimeObject* L_0 = __this->get_envoySinks_0();
 		return L_0;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void System.Runtime.Remoting.FormatterData::.ctor()
-extern "C" IL2CPP_METHOD_ATTR void FormatterData__ctor_m595C6D76D003212F8F2C3A7C06C16B8541884D19 (FormatterData_t3580FF512A069A7768CA03968B0D8A5F2EED6C6A * __this, const RuntimeMethod* method)
-{
-	{
-		ProviderData__ctor_m62F7BEE2687705DF69132616A26FC2139AAFB1CF(__this, /*hidden argument*/NULL);
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void System.Runtime.Remoting.Identity::.ctor(System.String)
-extern "C" IL2CPP_METHOD_ATTR void Identity__ctor_mFEE38F831AA3F06AB362718481DDAF3590479EE9 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, String_t* ___objectUri0, const RuntimeMethod* method)
-{
-	{
-		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
-		String_t* L_0 = ___objectUri0;
-		__this->set__objectUri_0(L_0);
-		return;
-	}
-}
-// System.Runtime.Remoting.Messaging.IMessageSink System.Runtime.Remoting.Identity::get_ChannelSink()
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject* Identity_get_ChannelSink_mAD4AEDC6EA61AE7EF16098B7F22BEC20817FC589 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		RuntimeObject* L_0 = __this->get__channelSink_1();
-		return L_0;
-	}
-}
-// System.Void System.Runtime.Remoting.Identity::set_ChannelSink(System.Runtime.Remoting.Messaging.IMessageSink)
-extern "C" IL2CPP_METHOD_ATTR void Identity_set_ChannelSink_m83E9ABAA9D885C2687D9F94732BB08EFF7831118 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, RuntimeObject* ___value0, const RuntimeMethod* method)
-{
-	{
-		RuntimeObject* L_0 = ___value0;
-		__this->set__channelSink_1(L_0);
-		return;
-	}
-}
-// System.Runtime.Remoting.Messaging.IMessageSink System.Runtime.Remoting.Identity::get_EnvoySink()
-extern "C" IL2CPP_METHOD_ATTR RuntimeObject* Identity_get_EnvoySink_m3C9ABB6C826A976FB6B2CD7DC4CEB343AD284D84 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		RuntimeObject* L_0 = __this->get__envoySink_2();
-		return L_0;
-	}
-}
-// System.String System.Runtime.Remoting.Identity::get_ObjectUri()
-extern "C" IL2CPP_METHOD_ATTR String_t* Identity_get_ObjectUri_m7CB73EF5E2101BC43A35E56AA506C6E659928BD9 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = __this->get__objectUri_0();
-		return L_0;
-	}
-}
-// System.Void System.Runtime.Remoting.Identity::set_ObjectUri(System.String)
-extern "C" IL2CPP_METHOD_ATTR void Identity_set_ObjectUri_mE4630E3F65B2A6E9DA60D830975549031A9EA3B8 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, String_t* ___value0, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->set__objectUri_0(L_0);
-		return;
-	}
-}
-// System.Boolean System.Runtime.Remoting.Identity::get_IsConnected()
-extern "C" IL2CPP_METHOD_ATTR bool Identity_get_IsConnected_m71FF39D6BAD417D698A5C306473747EDB090D12A (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = __this->get__objectUri_0();
-		return (bool)((!(((RuntimeObject*)(String_t*)L_0) <= ((RuntimeObject*)(RuntimeObject *)NULL)))? 1 : 0);
-	}
-}
-// System.Boolean System.Runtime.Remoting.Identity::get_Disposed()
-extern "C" IL2CPP_METHOD_ATTR bool Identity_get_Disposed_m57B594F2F3A3FCCA0BFBF1AF65FE102A133DA137 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		bool L_0 = __this->get__disposed_6();
-		return L_0;
-	}
-}
-// System.Void System.Runtime.Remoting.Identity::set_Disposed(System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR void Identity_set_Disposed_m28D1BF11148E67DEE2AC2BD5681D4909DB6CC8CD (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, bool ___value0, const RuntimeMethod* method)
-{
-	{
-		bool L_0 = ___value0;
-		__this->set__disposed_6(L_0);
-		return;
-	}
-}
-// System.Runtime.Remoting.Contexts.DynamicPropertyCollection System.Runtime.Remoting.Identity::get_ClientDynamicProperties()
-extern "C" IL2CPP_METHOD_ATTR DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * Identity_get_ClientDynamicProperties_m0CCE31D0AA06ECE1BC76B1B214C5DC34C7BBE228 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (Identity_get_ClientDynamicProperties_m0CCE31D0AA06ECE1BC76B1B214C5DC34C7BBE228_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_0 = __this->get__clientDynamicProperties_3();
-		if (L_0)
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_1 = (DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C *)il2cpp_codegen_object_new(DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C_il2cpp_TypeInfo_var);
-		DynamicPropertyCollection__ctor_m4860498A28E347477C6C791E603B983B3CEF1809(L_1, /*hidden argument*/NULL);
-		__this->set__clientDynamicProperties_3(L_1);
-	}
-
-IL_0013:
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_2 = __this->get__clientDynamicProperties_3();
-		return L_2;
-	}
-}
-// System.Boolean System.Runtime.Remoting.Identity::get_HasServerDynamicSinks()
-extern "C" IL2CPP_METHOD_ATTR bool Identity_get_HasServerDynamicSinks_m69FD18B9C80973FF0375BFDB46647B2DD8664BB6 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, const RuntimeMethod* method)
-{
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_0 = __this->get__serverDynamicProperties_4();
-		if (!L_0)
-		{
-			goto IL_0014;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_1 = __this->get__serverDynamicProperties_4();
-		NullCheck(L_1);
-		bool L_2 = DynamicPropertyCollection_get_HasProperties_mF3D9CD23D3E3652935D96DDE6BEF8CAF6F2C786C(L_1, /*hidden argument*/NULL);
-		return L_2;
-	}
-
-IL_0014:
-	{
-		return (bool)0;
-	}
-}
-// System.Void System.Runtime.Remoting.Identity::NotifyClientDynamicSinks(System.Boolean,System.Runtime.Remoting.Messaging.IMessage,System.Boolean,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR void Identity_NotifyClientDynamicSinks_mA8E001AFED507D772A749CBD00679FA8F4AEC590 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, bool ___start0, RuntimeObject* ___req_msg1, bool ___client_site2, bool ___async3, const RuntimeMethod* method)
-{
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_0 = __this->get__clientDynamicProperties_3();
-		if (!L_0)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_1 = __this->get__clientDynamicProperties_3();
-		NullCheck(L_1);
-		bool L_2 = DynamicPropertyCollection_get_HasProperties_mF3D9CD23D3E3652935D96DDE6BEF8CAF6F2C786C(L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_3 = __this->get__clientDynamicProperties_3();
-		bool L_4 = ___start0;
-		RuntimeObject* L_5 = ___req_msg1;
-		bool L_6 = ___client_site2;
-		bool L_7 = ___async3;
-		NullCheck(L_3);
-		DynamicPropertyCollection_NotifyMessage_mDE6FD4A47A6051CE4F3A6FC8EB43CB3365CE69E1(L_3, L_4, L_5, L_6, L_7, /*hidden argument*/NULL);
-	}
-
-IL_0025:
-	{
-		return;
-	}
-}
-// System.Void System.Runtime.Remoting.Identity::NotifyServerDynamicSinks(System.Boolean,System.Runtime.Remoting.Messaging.IMessage,System.Boolean,System.Boolean)
-extern "C" IL2CPP_METHOD_ATTR void Identity_NotifyServerDynamicSinks_mBF0A1F562DB424D93C54CD5903FE41E6C54A5143 (Identity_tB4E8BEFF42D505C9B24C9284934E6538F29606B6 * __this, bool ___start0, RuntimeObject* ___req_msg1, bool ___client_site2, bool ___async3, const RuntimeMethod* method)
-{
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_0 = __this->get__serverDynamicProperties_4();
-		if (!L_0)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_1 = __this->get__serverDynamicProperties_4();
-		NullCheck(L_1);
-		bool L_2 = DynamicPropertyCollection_get_HasProperties_mF3D9CD23D3E3652935D96DDE6BEF8CAF6F2C786C(L_1, /*hidden argument*/NULL);
-		if (!L_2)
-		{
-			goto IL_0025;
-		}
-	}
-	{
-		DynamicPropertyCollection_t53C262686576B02C86B55F8CAA16068AF33DC75C * L_3 = __this->get__serverDynamicProperties_4();
-		bool L_4 = ___start0;
-		RuntimeObject* L_5 = ___req_msg1;
-		bool L_6 = ___client_site2;
-		bool L_7 = ___async3;
-		NullCheck(L_3);
-		DynamicPropertyCollection_NotifyMessage_mDE6FD4A47A6051CE4F3A6FC8EB43CB3365CE69E1(L_3, L_4, L_5, L_6, L_7, /*hidden argument*/NULL);
-	}
-
-IL_0025:
-	{
-		return;
 	}
 }
 #ifdef __clang__

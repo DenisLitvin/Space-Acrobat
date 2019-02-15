@@ -38,6 +38,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Application_get_isPlaying();
 		Register_UnityEngine_Application_get_isPlaying();
 
+		//System.String UnityEngine.Application::get_persistentDataPath()
+		void Register_UnityEngine_Application_get_persistentDataPath();
+		Register_UnityEngine_Application_get_persistentDataPath();
+
 		//System.Void UnityEngine.Application::set_targetFrameRate(System.Int32)
 		void Register_UnityEngine_Application_set_targetFrameRate();
 		Register_UnityEngine_Application_set_targetFrameRate();
@@ -562,10 +566,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Event_Internal_SetNativeEvent();
 		Register_UnityEngine_Event_Internal_SetNativeEvent();
 
-		//System.Void UnityEngine.Event::Internal_Use()
-		void Register_UnityEngine_Event_Internal_Use();
-		Register_UnityEngine_Event_Internal_Use();
-
 		//System.Void UnityEngine.Event::get_mousePosition_Injected(UnityEngine.Vector2&)
 		void Register_UnityEngine_Event_get_mousePosition_Injected();
 		Register_UnityEngine_Event_get_mousePosition_Injected();
@@ -714,6 +714,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GameObject_Internal_AddComponentWithType();
 		Register_UnityEngine_GameObject_Internal_AddComponentWithType();
 
+		//UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
+		void Register_UnityEngine_GameObject_FindGameObjectWithTag();
+		Register_UnityEngine_GameObject_FindGameObjectWithTag();
+
 		//UnityEngine.GameObject[] UnityEngine.GameObject::FindGameObjectsWithTag(System.String)
 		void Register_UnityEngine_GameObject_FindGameObjectsWithTag();
 		Register_UnityEngine_GameObject_FindGameObjectsWithTag();
@@ -741,18 +745,6 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.Gradient
 
 	//Start Registrations for type : UnityEngine.GUI
-
-		//System.Boolean UnityEngine.GUI::HasMouseControl(System.Int32)
-		void Register_UnityEngine_GUI_HasMouseControl();
-		Register_UnityEngine_GUI_HasMouseControl();
-
-		//System.Void UnityEngine.GUI::GrabMouseControl(System.Int32)
-		void Register_UnityEngine_GUI_GrabMouseControl();
-		Register_UnityEngine_GUI_GrabMouseControl();
-
-		//System.Void UnityEngine.GUI::ReleaseMouseControl()
-		void Register_UnityEngine_GUI_ReleaseMouseControl();
-		Register_UnityEngine_GUI_ReleaseMouseControl();
 
 		//System.Void UnityEngine.GUI::set_changed(System.Boolean)
 		void Register_UnityEngine_GUI_set_changed();
@@ -818,14 +810,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GUIStyle_Internal_Destroy();
 		Register_UnityEngine_GUIStyle_Internal_Destroy();
 
-		//System.Void UnityEngine.GUIStyle::Internal_Draw2_Injected(UnityEngine.Rect&,UnityEngine.GUIContent,System.Int32,System.Boolean)
-		void Register_UnityEngine_GUIStyle_Internal_Draw2_Injected();
-		Register_UnityEngine_GUIStyle_Internal_Draw2_Injected();
-
-		//System.Void UnityEngine.GUIStyle::Internal_Draw_Injected(UnityEngine.Rect&,UnityEngine.GUIContent,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-		void Register_UnityEngine_GUIStyle_Internal_Draw_Injected();
-		Register_UnityEngine_GUIStyle_Internal_Draw_Injected();
-
 		//System.Void UnityEngine.GUIStyle::SetDefaultFont(UnityEngine.Font)
 		void Register_UnityEngine_GUIStyle_SetDefaultFont();
 		Register_UnityEngine_GUIStyle_SetDefaultFont();
@@ -857,14 +841,6 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.GUIStyleState
 
 	//Start Registrations for type : UnityEngine.GUIUtility
-
-		//System.Int32 UnityEngine.GUIUtility::GetControlID_Injected(System.Int32,UnityEngine.FocusType,UnityEngine.Rect&)
-		void Register_UnityEngine_GUIUtility_GetControlID_Injected();
-		Register_UnityEngine_GUIUtility_GetControlID_Injected();
-
-		//System.Int32 UnityEngine.GUIUtility::Internal_GetKeyboardControl()
-		void Register_UnityEngine_GUIUtility_Internal_GetKeyboardControl();
-		Register_UnityEngine_GUIUtility_Internal_GetKeyboardControl();
 
 		//System.Int32 UnityEngine.GUIUtility::get_guiDepth()
 		void Register_UnityEngine_GUIUtility_get_guiDepth();
@@ -1977,10 +1953,6 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
 		void Register_UnityEngine_Transform_SetParent();
 		Register_UnityEngine_Transform_SetParent();
-
-		//System.Void UnityEngine.Transform::TransformDirection_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)
-		void Register_UnityEngine_Transform_TransformDirection_Injected();
-		Register_UnityEngine_Transform_TransformDirection_Injected();
 
 		//System.Void UnityEngine.Transform::TransformPoint_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&)
 		void Register_UnityEngine_Transform_TransformPoint_Injected();

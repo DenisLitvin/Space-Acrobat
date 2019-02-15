@@ -510,6 +510,8 @@ struct MethodBuilder_tD0631CAB22528F2D7B7780C74D35354E30C9D023;
 struct PropertyBuilder_tA4BCF564D20EBC606418CA9F8790BF5E3CCA6A76;
 // System.Reflection.Emit.TypeBuilder
 struct TypeBuilder_t5C4DB8E28E44C07FA7197AE2D8CFB585553E8003;
+// System.Reflection.Emit.UnmanagedMarshal
+struct UnmanagedMarshal_tCF1F2DA6EAED118ED1459C8DFF35C5418259F3EE;
 // System.Reflection.EventInfo
 struct EventInfo_t;
 // System.Reflection.EventInfo/AddEventAdapter
@@ -1170,6 +1172,7 @@ extern const RuntimeMethod* TypeBuilder_get_Module_m25381DCEB1349BA1E97C8F154FC3
 extern const RuntimeMethod* TypeBuilder_get_Name_m389F3AD1421F84EAC97AA5FD184EB3B5E4D3202A_RuntimeMethod_var;
 extern const RuntimeMethod* TypeBuilder_get_Namespace_mC7E8F5F8BB7AFFEA3C31E87EC0025C104DC27F4E_RuntimeMethod_var;
 extern const RuntimeMethod* TypeBuilder_get_UnderlyingSystemType_mEFB44201FD92FF78DAEF47E9CC71CD7CA6227FA0_RuntimeMethod_var;
+extern const RuntimeMethod* UnmanagedMarshal__ctor_m005368EB74DDF13094D2A208604C32BF147E01AB_RuntimeMethod_var;
 extern const RuntimeType* AssemblyHashAlgorithm_t31E4F1BC642CF668706C9D0FBD9DFDF5EE01CEB9_0_0_0_var;
 extern const RuntimeType* AssemblyNameFlags_t7834EDF078E7ECA985AA434A1EA0D95C2A44F256_0_0_0_var;
 extern const RuntimeType* AssemblyVersionCompatibility_tEA062AB37A9A750B33F6CA2898EEF03A4EEA496C_0_0_0_var;
@@ -1570,6 +1573,7 @@ extern const uint32_t TypeBuilder_get_Module_m25381DCEB1349BA1E97C8F154FC362C544
 extern const uint32_t TypeBuilder_get_Name_m389F3AD1421F84EAC97AA5FD184EB3B5E4D3202A_MetadataUsageId;
 extern const uint32_t TypeBuilder_get_Namespace_mC7E8F5F8BB7AFFEA3C31E87EC0025C104DC27F4E_MetadataUsageId;
 extern const uint32_t TypeBuilder_get_UnderlyingSystemType_mEFB44201FD92FF78DAEF47E9CC71CD7CA6227FA0_MetadataUsageId;
+extern const uint32_t UnmanagedMarshal__ctor_m005368EB74DDF13094D2A208604C32BF147E01AB_MetadataUsageId;
 struct Assembly_t;;
 struct Assembly_t_marshaled_com;
 struct Assembly_t_marshaled_com;;
@@ -25707,6 +25711,20 @@ extern "C" IL2CPP_METHOD_ATTR Type_t * TypeBuilderInstantiation_MakeGenericType_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void System.Reflection.Emit.UnmanagedMarshal::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void UnmanagedMarshal__ctor_m005368EB74DDF13094D2A208604C32BF147E01AB (UnmanagedMarshal_tCF1F2DA6EAED118ED1459C8DFF35C5418259F3EE * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (UnmanagedMarshal__ctor_m005368EB74DDF13094D2A208604C32BF147E01AB_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(UnmanagedMarshal__ctor_m005368EB74DDF13094D2A208604C32BF147E01AB_RuntimeMethod_var);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

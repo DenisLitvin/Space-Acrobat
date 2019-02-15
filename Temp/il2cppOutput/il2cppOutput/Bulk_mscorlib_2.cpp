@@ -810,6 +810,7 @@ extern const RuntimeMethod* CaseInsensitiveComparer__ctor_mD5DC15C2FD17907674949
 extern const RuntimeMethod* CaseInsensitiveHashCodeProvider_GetHashCode_m659ED12E81DB107B53E20F18AFCC475410DD131F_RuntimeMethod_var;
 extern const RuntimeMethod* CaseInsensitiveHashCodeProvider__ctor_m34F0F884884090CA3735F6B231D2A7222F50787A_RuntimeMethod_var;
 extern const RuntimeMethod* CharEnumerator_System_Collections_IEnumerator_get_Current_m311AB48412996DAAA979792FC355BA51B1B4F2F1_RuntimeMethod_var;
+extern const RuntimeMethod* CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3_RuntimeMethod_var;
 extern const RuntimeMethod* CharEnumerator_get_Current_m2C9590C1375021CA10C3049823690BB0E26BE3A9_RuntimeMethod_var;
 extern const RuntimeMethod* Char_CompareTo_mDEA952E088BA3A94E70BA1F05E373D69248A9087_RuntimeMethod_var;
 extern const RuntimeMethod* Char_ConvertToUtf32_m2AFA8A0A98ECFE3ACF3F74D45F7546ADBBADD601_RuntimeMethod_var;
@@ -1081,6 +1082,7 @@ extern const uint32_t CaseInsensitiveHashCodeProvider__ctor_m34F0F884884090CA373
 extern const uint32_t CaseInsensitiveHashCodeProvider__ctor_m6D2AC9A88ACE3D34B91BD33FC15984D5B3CA7860_MetadataUsageId;
 extern const uint32_t CaseInsensitiveHashCodeProvider_get_Default_mEB75D6529BEF600AEC8A3F848B9CAB5650C588B8_MetadataUsageId;
 extern const uint32_t CharEnumerator_System_Collections_IEnumerator_get_Current_m311AB48412996DAAA979792FC355BA51B1B4F2F1_MetadataUsageId;
+extern const uint32_t CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3_MetadataUsageId;
 extern const uint32_t CharEnumerator_get_Current_m2C9590C1375021CA10C3049823690BB0E26BE3A9_MetadataUsageId;
 extern const uint32_t Char_CompareTo_mDEA952E088BA3A94E70BA1F05E373D69248A9087_MetadataUsageId;
 extern const uint32_t Char_ConvertToUtf32_m2AFA8A0A98ECFE3ACF3F74D45F7546ADBBADD601_MetadataUsageId;
@@ -27421,6 +27423,20 @@ extern "C" IL2CPP_METHOD_ATTR void CharEnumerator_Reset_mB10759A262CC6DCEE2203A7
 	{
 		__this->set_currentElement_2(0);
 		__this->set_index_1((-1));
+		return;
+	}
+}
+// System.Void System.CharEnumerator::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3 (CharEnumerator_t2EA2A40D79D38A2498DA996D174FD1DE79CD5244 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(CharEnumerator__ctor_m7C7C726A40CC9BB2FB9FF96C172BCDA6A6B653D3_RuntimeMethod_var);
 		return;
 	}
 }

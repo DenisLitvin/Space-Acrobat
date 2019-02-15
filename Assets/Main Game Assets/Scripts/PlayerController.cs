@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time - lastMissileTargetSetTime >= missileTargetUpdateThreshold)
         {
             lastMissileTargetSetTime = Time.time;
-            missileTarget = transform.position + transform.forward * 1f;
+            missileTarget = transform.position + transform.forward * 0.7f;
         }
 
         if (moveVector != Vector3.zero)

@@ -17929,6 +17929,16 @@ extern "C" IL2CPP_METHOD_ATTR int32_t Application_get_platform_m6AFFFF3B077F4D5C
 	int32_t retVal = _il2cpp_icall_func();
 	return retVal;
 }
+// System.String UnityEngine.Application::get_persistentDataPath()
+extern "C" IL2CPP_METHOD_ATTR String_t* Application_get_persistentDataPath_m82E34156D8BD0A55CAC258CDFE8317FAD6945F5B (const RuntimeMethod* method)
+{
+	typedef String_t* (*Application_get_persistentDataPath_m82E34156D8BD0A55CAC258CDFE8317FAD6945F5B_ftn) ();
+	static Application_get_persistentDataPath_m82E34156D8BD0A55CAC258CDFE8317FAD6945F5B_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Application_get_persistentDataPath_m82E34156D8BD0A55CAC258CDFE8317FAD6945F5B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Application::get_persistentDataPath()");
+	String_t* retVal = _il2cpp_icall_func();
+	return retVal;
+}
 // System.Void UnityEngine.Application::set_targetFrameRate(System.Int32)
 extern "C" IL2CPP_METHOD_ATTR void Application_set_targetFrameRate_mC20C40E50BAB994B10DDAC0E3C26A851025337BC (int32_t ___value0, const RuntimeMethod* method)
 {
@@ -29325,6 +29335,16 @@ extern "C" IL2CPP_METHOD_ATTR String_t* GameObject_get_tag_mA9DC75D3D591B5E7D1AD
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (GameObject_get_tag_mA9DC75D3D591B5E7D1ADAD14EA66CC4186580275_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.GameObject::get_tag()");
 	String_t* retVal = _il2cpp_icall_func(__this);
+	return retVal;
+}
+// UnityEngine.GameObject UnityEngine.GameObject::FindGameObjectWithTag(System.String)
+extern "C" IL2CPP_METHOD_ATTR GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * GameObject_FindGameObjectWithTag_m9F2877F52346B973DE3023209D73852E96ECC10D (String_t* ___tag0, const RuntimeMethod* method)
+{
+	typedef GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * (*GameObject_FindGameObjectWithTag_m9F2877F52346B973DE3023209D73852E96ECC10D_ftn) (String_t*);
+	static GameObject_FindGameObjectWithTag_m9F2877F52346B973DE3023209D73852E96ECC10D_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (GameObject_FindGameObjectWithTag_m9F2877F52346B973DE3023209D73852E96ECC10D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.GameObject::FindGameObjectWithTag(System.String)");
+	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * retVal = _il2cpp_icall_func(___tag0);
 	return retVal;
 }
 // UnityEngine.GameObject[] UnityEngine.GameObject::FindGameObjectsWithTag(System.String)

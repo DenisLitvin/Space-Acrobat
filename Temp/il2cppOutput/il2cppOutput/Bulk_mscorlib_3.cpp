@@ -762,6 +762,7 @@ extern String_t* _stringLiteralFB2D933A5A8BE5989BECD2E8F00EC57F9D995758;
 extern String_t* _stringLiteralFB89F8D393DA096100BFDC1D5649D094EFF15377;
 extern String_t* _stringLiteralFB96549631C835EB239CD614CC6B5CB7D295121A;
 extern String_t* _stringLiteralFFFF85E12994D802154FE586A70E285162D88E1E;
+extern const RuntimeMethod* ConsoleCancelEventArgs__ctor_m95968474A63DE5D98393AABB6C10EB670127EAFF_RuntimeMethod_var;
 extern const RuntimeMethod* ConsoleKeyInfo__ctor_mF5F427F75CCD5D4BCAADCE6AE31F61D70BD95B98_RuntimeMethod_var;
 extern const RuntimeMethod* Console_DoConsoleCancelEvent_mBC4C4C488FCE021441F2C1D5A25D86F2F8A94FDD_RuntimeMethod_var;
 extern const RuntimeMethod* Console_SetOut_mAC2420DF73A65A087FAA07AB367F3B54785C30BF_RuntimeMethod_var;
@@ -924,6 +925,7 @@ extern const RuntimeType* String_t_0_0_0_var;
 extern const RuntimeType* UInt16_tAE45CEF73BF720100519F6867F32145D075F928E_0_0_0_var;
 extern const RuntimeType* UInt32_t4980FA09003AFAAB5A6E361BA2748EA9A005709B_0_0_0_var;
 extern const RuntimeType* UInt64_tA02DF3B59C8FC4A849BD207DA11038CC64E4CB4E_0_0_0_var;
+extern const uint32_t ConsoleCancelEventArgs__ctor_m95968474A63DE5D98393AABB6C10EB670127EAFF_MetadataUsageId;
 extern const uint32_t ConsoleCancelEventArgs__ctor_mF734EC3C82D0A490C0A05416E566BFC53ACFB471_MetadataUsageId;
 extern const uint32_t ConsoleDriver_CreateNullConsoleDriver_mEBAC4A508B85C44CCA50312BDB64A1A1B30FDA17_MetadataUsageId;
 extern const uint32_t ConsoleDriver_CreateTermInfoDriver_m93B83A6BC60910A8FDFA247BE56A30055E687342_MetadataUsageId;
@@ -17464,6 +17466,20 @@ extern "C" IL2CPP_METHOD_ATTR bool ConsoleCancelEventArgs_get_Cancel_mA996E8B7FE
 	{
 		bool L_0 = __this->get__cancel_2();
 		return L_0;
+	}
+}
+// System.Void System.ConsoleCancelEventArgs::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void ConsoleCancelEventArgs__ctor_m95968474A63DE5D98393AABB6C10EB670127EAFF (ConsoleCancelEventArgs_t2B351DE0A5B10D5CA5E93A7AE36C16DB17D73760 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (ConsoleCancelEventArgs__ctor_m95968474A63DE5D98393AABB6C10EB670127EAFF_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(ConsoleCancelEventArgs__ctor_m95968474A63DE5D98393AABB6C10EB670127EAFF_RuntimeMethod_var);
+		return;
 	}
 }
 #ifdef __clang__

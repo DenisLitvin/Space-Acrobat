@@ -1036,12 +1036,14 @@ extern const uint32_t BinaryReader_ReadInt32_m001A1151B2E72E802DFA50E6C7F464622D
 extern const uint32_t BinaryReader_ReadString_m92D7BFCF1D27F089C11BB91DFFC37CE301C0BAF8_MetadataUsageId;
 extern const uint32_t BinaryReader_Read_m05BCEC0C22F668E1240C7AE1DD35DADFF5BA8DB3_MetadataUsageId;
 extern const uint32_t BinaryReader__ctor_m99D896A5BF353E3C10A3B1FC14DB22EB18CAD4B5_MetadataUsageId;
+extern const uint32_t BinaryReader__ctor_mD134893EA93809AFA29B025FF7439B82C35FE55F_MetadataUsageId;
 extern const uint32_t BinaryWriter_Write_m470D7D1CC7D284CC56FDB7A348F8F0039B606665_MetadataUsageId;
 extern const uint32_t BinaryWriter_Write_m7AC984B8EEEA3BCBDDA1DBFF2C3BCC7D80C4DDF2_MetadataUsageId;
 extern const uint32_t BinaryWriter_Write_mA5FA71233326D218B2F385F20CD62B23DBC56B89_MetadataUsageId;
 extern const uint32_t BinaryWriter_Write_mD4AC70145D119F9E0F92200F7FF4ACAF85CBABB9_MetadataUsageId;
 extern const uint32_t BinaryWriter__cctor_mE949DEE23EBE64DE81CDF697EAD3FD60D206DC1A_MetadataUsageId;
 extern const uint32_t BinaryWriter__ctor_m1299021C1E601AD4FB82D4C41FC2E3D73EF1B6D7_MetadataUsageId;
+extern const uint32_t BinaryWriter__ctor_m2E92F4E5096905E2E7487E003AB7B3CC5C5EC185_MetadataUsageId;
 extern const uint32_t BinaryWriter__ctor_m5A85DD02499F9284E0F06ACF4FE9EA3BEC9D71E9_MetadataUsageId;
 extern const uint32_t CStreamReader_Peek_m1FC540889F2D9687070978F20CD67EEFFD469C42_MetadataUsageId;
 extern const uint32_t CStreamReader_ReadLine_m0024BF56DFAC48D889E0E2038E4BB72779E2672E_MetadataUsageId;
@@ -14352,6 +14354,8 @@ extern "C" IL2CPP_METHOD_ATTR RandomNumberGenerator_t12277F7F965BA79C54E4B3BFABD
 extern "C" IL2CPP_METHOD_ATTR void Monitor_Exit_m49A1E5356D984D0B934BB97A305E2E5E207225C2 (RuntimeObject * ___obj0, const RuntimeMethod* method);
 // System.Void System.ArgumentNullException::.ctor(System.String,System.String)
 extern "C" IL2CPP_METHOD_ATTR void ArgumentNullException__ctor_m9EA692D49986AEBAC433CE3381331146109AE20F (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * __this, String_t* ___paramName0, String_t* ___message1, const RuntimeMethod* method);
+// System.Void System.Text.UTF8Encoding::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void UTF8Encoding__ctor_m999E138A2E4C290F8A97866714EE53D58C931488 (UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE * __this, const RuntimeMethod* method);
 // System.Void System.IO.BinaryReader::.ctor(System.IO.Stream,System.Text.Encoding,System.Boolean)
 extern "C" IL2CPP_METHOD_ATTR void BinaryReader__ctor_m99D896A5BF353E3C10A3B1FC14DB22EB18CAD4B5 (BinaryReader_t7467E057B24C42E81B1C3E5C60288BB4B1718969 * __this, Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * ___input0, Encoding_t7837A3C0F55EAE0E3959A53C6D6E88B113ED78A4 * ___encoding1, bool ___leaveOpen2, const RuntimeMethod* method);
 // System.Type System.Object::GetType()
@@ -20231,6 +20235,23 @@ extern "C"  Exception_t * GuidResult_GetGuidParseException_mFCC6B57DC1E3E4FDE2AD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void System.IO.BinaryReader::.ctor(System.IO.Stream)
+extern "C" IL2CPP_METHOD_ATTR void BinaryReader__ctor_mD134893EA93809AFA29B025FF7439B82C35FE55F (BinaryReader_t7467E057B24C42E81B1C3E5C60288BB4B1718969 * __this, Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * ___input0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BinaryReader__ctor_mD134893EA93809AFA29B025FF7439B82C35FE55F_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * L_0 = ___input0;
+		UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE * L_1 = (UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE *)il2cpp_codegen_object_new(UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE_il2cpp_TypeInfo_var);
+		UTF8Encoding__ctor_m999E138A2E4C290F8A97866714EE53D58C931488(L_1, /*hidden argument*/NULL);
+		BinaryReader__ctor_m99D896A5BF353E3C10A3B1FC14DB22EB18CAD4B5(__this, L_0, L_1, (bool)0, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void System.IO.BinaryReader::.ctor(System.IO.Stream,System.Text.Encoding)
 extern "C" IL2CPP_METHOD_ATTR void BinaryReader__ctor_m8086092A91D507C32ADD5D87902115AD36832C6D (BinaryReader_t7467E057B24C42E81B1C3E5C60288BB4B1718969 * __this, Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * ___input0, Encoding_t7837A3C0F55EAE0E3959A53C6D6E88B113ED78A4 * ___encoding1, const RuntimeMethod* method)
 {
@@ -22053,6 +22074,23 @@ extern "C" IL2CPP_METHOD_ATTR void BinaryWriter__ctor_m5A85DD02499F9284E0F06ACF4
 		NullCheck(L_3);
 		Encoder_t29B2697B0B775EABC52EBFB914F327BE9B1A3464 * L_4 = VirtFuncInvoker0< Encoder_t29B2697B0B775EABC52EBFB914F327BE9B1A3464 * >::Invoke(28 /* System.Text.Encoder System.Text.Encoding::GetEncoder() */, L_3);
 		__this->set__encoder_4(L_4);
+		return;
+	}
+}
+// System.Void System.IO.BinaryWriter::.ctor(System.IO.Stream)
+extern "C" IL2CPP_METHOD_ATTR void BinaryWriter__ctor_m2E92F4E5096905E2E7487E003AB7B3CC5C5EC185 (BinaryWriter_t1B8E78B6CACFBFB57BF140FB4DECE19AFD249CC3 * __this, Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * ___output0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (BinaryWriter__ctor_m2E92F4E5096905E2E7487E003AB7B3CC5C5EC185_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Stream_tFC50657DD5AAB87770987F9179D934A51D99D5E7 * L_0 = ___output0;
+		UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE * L_1 = (UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE *)il2cpp_codegen_object_new(UTF8Encoding_t77ED103B749A387EF072C3429F48C91D12CA08DE_il2cpp_TypeInfo_var);
+		UTF8Encoding__ctor_m026030C6C39449C25EC6FA364AA0A49FB3ADCD9E(L_1, (bool)0, (bool)1, /*hidden argument*/NULL);
+		BinaryWriter__ctor_m1299021C1E601AD4FB82D4C41FC2E3D73EF1B6D7(__this, L_0, L_1, (bool)0, /*hidden argument*/NULL);
 		return;
 	}
 }

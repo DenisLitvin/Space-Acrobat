@@ -345,38 +345,38 @@ RegisterBuiltinTypes();
 	RegisterUnityClass<Sprite>("Core");
 	//32. SpriteAtlas
 	RegisterUnityClass<SpriteAtlas>("Core");
-	//33. UI::Canvas
-	RegisterUnityClass<UI::Canvas>("UI");
-	//34. UI::CanvasGroup
-	RegisterUnityClass<UI::CanvasGroup>("UI");
-	//35. UI::CanvasRenderer
-	RegisterUnityClass<UI::CanvasRenderer>("UI");
-	//36. TextRendering::Font
-	RegisterUnityClass<TextRendering::Font>("TextRendering");
-	//37. Rigidbody
-	RegisterUnityClass<Rigidbody>("Physics");
-	//38. Collider
-	RegisterUnityClass<Collider>("Physics");
-	//39. ParticleSystem
+	//33. ParticleSystem
 	RegisterUnityClass<ParticleSystem>("ParticleSystem");
-	//40. ParticleSystemRenderer
+	//34. ParticleSystemRenderer
 	RegisterUnityClass<ParticleSystemRenderer>("ParticleSystem");
-	//41. Animator
+	//35. Rigidbody
+	RegisterUnityClass<Rigidbody>("Physics");
+	//36. Collider
+	RegisterUnityClass<Collider>("Physics");
+	//37. Animator
 	RegisterUnityClass<Animator>("Animation");
-	//42. AnimatorOverrideController
+	//38. AnimatorOverrideController
 	RegisterUnityClass<AnimatorOverrideController>("Animation");
-	//43. RuntimeAnimatorController
+	//39. RuntimeAnimatorController
 	RegisterUnityClass<RuntimeAnimatorController>("Animation");
-	//44. AudioClip
+	//40. AudioClip
 	RegisterUnityClass<AudioClip>("Audio");
-	//45. SampleClip
+	//41. SampleClip
 	RegisterUnityClass<SampleClip>("Audio");
-	//46. AudioListener
+	//42. AudioListener
 	RegisterUnityClass<AudioListener>("Audio");
-	//47. AudioBehaviour
+	//43. AudioBehaviour
 	RegisterUnityClass<AudioBehaviour>("Audio");
-	//48. AudioSource
+	//44. AudioSource
 	RegisterUnityClass<AudioSource>("Audio");
+	//45. TextRendering::Font
+	RegisterUnityClass<TextRendering::Font>("TextRendering");
+	//46. UI::Canvas
+	RegisterUnityClass<UI::Canvas>("UI");
+	//47. UI::CanvasGroup
+	RegisterUnityClass<UI::CanvasGroup>("UI");
+	//48. UI::CanvasRenderer
+	RegisterUnityClass<UI::CanvasRenderer>("UI");
 	//49. TagManager
 	RegisterUnityClass<TagManager>("Core");
 	//50. GraphicsSettings

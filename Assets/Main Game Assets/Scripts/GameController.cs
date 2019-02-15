@@ -70,6 +70,7 @@ public class GameController : PersistableObject
     {
         DestroyMissiles();
         StopGame();
+        persistentStorage.Save(this);
     }
 
     public void HandleCoinCollect()
@@ -108,7 +109,6 @@ public class GameController : PersistableObject
         DestroyCoins();
         StopCoroutine("SpawnMissiles");
         StartCoroutine("ActivateInterface");
-        persistentStorage.Save(this);
     }
 
     IEnumerator ActivateInterface()
@@ -177,7 +177,5 @@ public class GameController : PersistableObject
     {
         currentShipPrefab = reader.ReadInt();
         coins = reader.ReadInt();
-        print(currentShipPrefab);
-        print(coins);
     }
 }

@@ -1153,6 +1153,7 @@ extern const RuntimeMethod* CompareInfo_IndexOf_mB9461B9D33A8AF04CBDA5BA299A5267
 extern const RuntimeMethod* CompareInfo_IsPrefix_mE42FE270F838D80C155AEC219DC2558F3F34BD36_RuntimeMethod_var;
 extern const RuntimeMethod* CompareInfo_IsSuffix_mB734AA0C74DB63689303C1A99E9D0C00D53C2EEA_RuntimeMethod_var;
 extern const RuntimeMethod* CompareInfo_LastIndexOf_mACB90E30C378E95541AED0E468AF1C87BB2BA794_RuntimeMethod_var;
+extern const RuntimeMethod* CompareInfo__ctor_m841EB6DC314800AC90C16EDB259B8DBB3BCFA152_RuntimeMethod_var;
 extern const RuntimeMethod* Comparer_1_get_Default_mDDE26044E0F352546BE2390402A0236FE376FB3C_RuntimeMethod_var;
 extern const RuntimeMethod* Contract_ForAll_TisType_t_m92ADDB04B2359A20467EFB9306995973FFEF64FB_RuntimeMethod_var;
 extern const RuntimeMethod* CultureInfo_CheckDomainSafetyObject_m01725D60CEB913D48175CC310FC6C1ECCA42A1A8_RuntimeMethod_var;
@@ -1303,6 +1304,7 @@ extern const uint32_t CompareInfo_LastIndexOf_mACB90E30C378E95541AED0E468AF1C87B
 extern const uint32_t CompareInfo_OnDeserialized_m413EBD4F2FEB829F421E2090010B8EA0EF46119B_MetadataUsageId;
 extern const uint32_t CompareInfo_OnSerializing_mFF6C35B93E67401EE91F4D8547EE34F3D4899BC8_MetadataUsageId;
 extern const uint32_t CompareInfo_ToString_m770A27E70F7B8FB598E0EF85A554677F7CAB82C9_MetadataUsageId;
+extern const uint32_t CompareInfo__ctor_m841EB6DC314800AC90C16EDB259B8DBB3BCFA152_MetadataUsageId;
 extern const uint32_t CompareInfo_get_Name_mFC962E79B2133D59E2C83BA5BF70995D3147B8EC_MetadataUsageId;
 extern const uint32_t CompareInfo_get_UseManagedCollation_mE3EDFF2DB83257810C9BEA1A09987D669F45EB2F_MetadataUsageId;
 extern const uint32_t CultureData_GetCalendar_mB4F2D5CDF5ACA790475C2BDC168290047AEB6DF5_MetadataUsageId;
@@ -41724,6 +41726,20 @@ extern "C" IL2CPP_METHOD_ATTR int32_t CompareInfo_internal_index_mC84E39918F364D
 	typedef int32_t (*CompareInfo_internal_index_mC84E39918F364D80B7D6BFD8BD9B301A5246A5BA_ftn) (CompareInfo_tB9A071DBC11AC00AF2EA2066D0C2AE1DCB1865D1 *, String_t*, int32_t, int32_t, String_t*, int32_t, bool);
 	using namespace il2cpp::icalls;
 	return  ((CompareInfo_internal_index_mC84E39918F364D80B7D6BFD8BD9B301A5246A5BA_ftn)mscorlib::System::Globalization::CompareInfo::internal_index) (__this, ___source0, ___sindex1, ___count2, ___value3, ___options4, ___first5);
+}
+// System.Void System.Globalization.CompareInfo::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void CompareInfo__ctor_m841EB6DC314800AC90C16EDB259B8DBB3BCFA152 (CompareInfo_tB9A071DBC11AC00AF2EA2066D0C2AE1DCB1865D1 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (CompareInfo__ctor_m841EB6DC314800AC90C16EDB259B8DBB3BCFA152_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(CompareInfo__ctor_m841EB6DC314800AC90C16EDB259B8DBB3BCFA152_RuntimeMethod_var);
+		return;
+	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

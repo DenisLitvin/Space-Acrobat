@@ -987,11 +987,13 @@ extern const RuntimeMethod* RegionInfo__ctor_m45928D5586FFBDE0B3ED75C1002C68C475
 extern const RuntimeMethod* RegionInfo__ctor_m5E369A6AC6D9DD641C9CC8D8A03F8347B4D46310_RuntimeMethod_var;
 extern const RuntimeMethod* RegionInfo__ctor_mD2AE3087C520A20DC2CC0556B1296FA64FC1DE44_RuntimeMethod_var;
 extern const RuntimeMethod* SortKey_Compare_m74579EDF17858F08A41483AF84E14FD35C2FA530_RuntimeMethod_var;
+extern const RuntimeMethod* SortKey__ctor_mBB68973C906E614446D9B81124ADE846F752EDF6_RuntimeMethod_var;
 extern const RuntimeMethod* TaiwanCalendar_ToFourDigitYear_m99FF194442D23B9BD525E2986FB577C21677C41E_RuntimeMethod_var;
 extern const RuntimeMethod* TaiwanCalendar__ctor_mB2501398EAC955AEF6F00502E46138E9CC0062F7_RuntimeMethod_var;
 extern const RuntimeMethod* TextInfo_GetCaseInsensitiveHashCode_m115F17A457DB17232AAA232C8549FC64FF0E7D75_RuntimeMethod_var;
 extern const RuntimeMethod* TextInfo_ToLower_mD741B5FD81440DCA1119F7AF1FB86EBCE3B4EFD1_RuntimeMethod_var;
 extern const RuntimeMethod* TextInfo_ToUpper_m59B5A922ACBEFB342156CA7A181EA4030682AA99_RuntimeMethod_var;
+extern const RuntimeMethod* TextInfo__ctor_mA4D3769879DFB72F3EDB388F7DF9EA16E3929D95_RuntimeMethod_var;
 extern const RuntimeMethod* TimeSpanFormat_FormatCustomized_mCB50C3B82D8B87F5EA53AC7A3E4D19FA5C73C5FA_RuntimeMethod_var;
 extern const RuntimeMethod* TimeSpanFormat_Format_mDFAF627CECBD00A1DDB27D3D812974B3A2875B8F_RuntimeMethod_var;
 extern const RuntimeType* DateTimeFormatInfo_tF4BB3AA482C2F772D2A9022F78BF8727830FAF5F_0_0_0_var;
@@ -1147,6 +1149,7 @@ extern const uint32_t RegionInfo_get_IsMetric_mFA689142EF35198A849229472BF2D96D6
 extern const uint32_t SortKey_Compare_m74579EDF17858F08A41483AF84E14FD35C2FA530_MetadataUsageId;
 extern const uint32_t SortKey_Equals_mFE17681D249650DDBDAE3CC23993CD20BC144842_MetadataUsageId;
 extern const uint32_t SortKey_ToString_m47AFF16B9E94D08B84A95A563A9A835DF3DCA4B7_MetadataUsageId;
+extern const uint32_t SortKey__ctor_mBB68973C906E614446D9B81124ADE846F752EDF6_MetadataUsageId;
 extern const uint32_t SortKey_tD5C96B638D8C6D0C4C2F49F27387D51202D78FD9_com_FromNativeMethodDefinition_MetadataUsageId;
 extern const uint32_t SortKey_tD5C96B638D8C6D0C4C2F49F27387D51202D78FD9_pinvoke_FromNativeMethodDefinition_MetadataUsageId;
 extern const uint32_t SortVersion_Equals_m511AD9FADFBB18A9BF32DBCB1D57DDFEE3E1C07A_MetadataUsageId;
@@ -1173,6 +1176,7 @@ extern const uint32_t TextInfo_ToString_mC66A07D465161AD20AFCBE78E97977F46498888
 extern const uint32_t TextInfo_ToUpperInternal_m0553465EB8B32687BECB0EDF43E77D70AC58B69C_MetadataUsageId;
 extern const uint32_t TextInfo_ToUpperInternal_mE18789DEB4C2533AA52E1A085E57B5702D57F8A1_MetadataUsageId;
 extern const uint32_t TextInfo_ToUpper_m59B5A922ACBEFB342156CA7A181EA4030682AA99_MetadataUsageId;
+extern const uint32_t TextInfo__ctor_mA4D3769879DFB72F3EDB388F7DF9EA16E3929D95_MetadataUsageId;
 extern const uint32_t TextInfo_get_Invariant_m6020FDD7232184775D57CA6BA4A6B00FADEF4E66_MetadataUsageId;
 extern const uint32_t TextInfo_get_IsAsciiCasingSameAsInvariant_mC6DC7A5F74C15141AEFFF68E644E3874C4FB9349_MetadataUsageId;
 extern const uint32_t TimeSpanFormat_FormatCustomized_mCB50C3B82D8B87F5EA53AC7A3E4D19FA5C73C5FA_MetadataUsageId;
@@ -29744,6 +29748,20 @@ extern "C" IL2CPP_METHOD_ATTR String_t* SortKey_ToString_m47AFF16B9E94D08B84A95A
 		return L_14;
 	}
 }
+// System.Void System.Globalization.SortKey::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void SortKey__ctor_mBB68973C906E614446D9B81124ADE846F752EDF6 (SortKey_tD5C96B638D8C6D0C4C2F49F27387D51202D78FD9 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (SortKey__ctor_mBB68973C906E614446D9B81124ADE846F752EDF6_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(SortKey__ctor_mBB68973C906E614446D9B81124ADE846F752EDF6_RuntimeMethod_var);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -32686,6 +32704,20 @@ IL_00b2:
 		int32_t L_53 = V_0;
 		int32_t L_54 = V_1;
 		return ((int32_t)il2cpp_codegen_subtract((int32_t)L_53, (int32_t)L_54));
+	}
+}
+// System.Void System.Globalization.TextInfo::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void TextInfo__ctor_mA4D3769879DFB72F3EDB388F7DF9EA16E3929D95 (TextInfo_t5F1E697CB6A7E5EC80F0DC3A968B9B4A70C291D8 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (TextInfo__ctor_mA4D3769879DFB72F3EDB388F7DF9EA16E3929D95_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(TextInfo__ctor_mA4D3769879DFB72F3EDB388F7DF9EA16E3929D95_RuntimeMethod_var);
+		return;
 	}
 }
 #ifdef __clang__
