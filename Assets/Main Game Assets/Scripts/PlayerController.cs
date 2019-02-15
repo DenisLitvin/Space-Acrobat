@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [System.NonSerialized]
+    public Vector3 missileTarget;
+
     public float speed;
     public float tilt;
     public float degreesRotatePerFrame;
-    public Vector3 missileTarget;
     public float missileTargetUpdateThreshold;
 
     public Joystick joystick;

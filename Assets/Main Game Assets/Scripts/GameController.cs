@@ -3,17 +3,19 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GameController : MonoBehaviour
+public class GameController : PersistableObject
 {
     public GameObject[] spaceshipPrefabs;
 
     public GameObject uiInterface;
-       
+
     public Text coinText;
 
     public GameObject player;
     public MissileSpawner missileSpawner;
     public PlanetSpawner planetSpawner;
+
+    public PersistentStorage persistentStorage;
 
     private PlayerController playerControllerScript;
 
@@ -30,7 +32,12 @@ public class GameController : MonoBehaviour
         playerControllerScript = player.GetComponent<PlayerController>();
         Application.targetFrameRate = 60;
         StopGame();
-        SpawnShip(0);
+
+        if (persistentStorage.SaveFileExist())
+        {
+            persistentStorage.Load(this);
+        }
+        SpawnShip(currentShipPrefab);
     }
 
     private void Update()
@@ -86,7 +93,7 @@ public class GameController : MonoBehaviour
         isPlaying = true;
         uiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
-        //StartCoroutine("SpawnMissiles");
+        StartCoroutine("SpawnMissiles");
     }
 
     private void StopGame()
@@ -101,6 +108,7 @@ public class GameController : MonoBehaviour
         DestroyCoins();
         StopCoroutine("SpawnMissiles");
         StartCoroutine("ActivateInterface");
+        persistentStorage.Save(this);
     }
 
     IEnumerator ActivateInterface()
@@ -158,4 +166,18 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //PersistableObject
+    public override void Save(GameDataWriter writer)
+    {
+        writer.Write(currentShipPrefab);
+        writer.Write(coins);
+    }
+
+    public override void Load(GameDataReader reader)
+    {
+        currentShipPrefab = reader.ReadInt();
+        coins = reader.ReadInt();
+        print(currentShipPrefab);
+        print(coins);
+    }
 }
