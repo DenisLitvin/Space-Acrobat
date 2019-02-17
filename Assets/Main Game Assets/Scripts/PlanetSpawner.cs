@@ -21,6 +21,19 @@ public class PlanetSpawner : MonoBehaviour
 
     private List<GameObject>[] pools;
     private int planetCount;
+    
+    public void SetPlayingMode(bool isPlaying)
+    {
+        Collider[] colliders = Physics.OverlapSphere(playerTransform.position, 25);
+        foreach (Collider col in colliders)
+        {
+            if (col.tag == "Environment")
+            {
+                var controller = col.gameObject.GetComponent<PlanetController>();
+                controller.SetSpeed(isPlaying ? speed : 0f);
+            }
+        }
+    }
 
     void Awake()
     {
@@ -51,9 +64,9 @@ public class PlanetSpawner : MonoBehaviour
 
     void Update()
     {
-        Vector3 delta = Time.deltaTime * speed * -playerTransform.forward;
-        delta.y = 0f;
-        transform.position = transform.position + delta;
+        //Vector3 delta = Time.deltaTime * speed * -playerTransform.forward;
+        //delta.y = 0f;
+        //transform.position = transform.position + delta;
 
         if (planetCount < maxPlanetCount) SpawnPlanet();
     }
@@ -83,10 +96,12 @@ public class PlanetSpawner : MonoBehaviour
         planet.transform.position = position;
         planet.transform.rotation = rotation;
         planet.transform.localScale = new Vector3(scale, scale, scale);
-        planet.transform.parent = transform;
+        //planet.transform.parent = transform;
         PlanetController controller = planet.GetComponent<PlanetController>();
-        controller.planetSpawner = gameObject;
-        controller.planetId = id;
+        controller.PlanetSpawner = gameObject;
+        controller.PlayerTransform = playerTransform;
+        controller.PlanetId = id;
+        controller.SetSpeed(speed);
     }
 
     public void ReclaimPlanet(GameObject planet)
@@ -95,7 +110,7 @@ public class PlanetSpawner : MonoBehaviour
 
         PlanetController controller = planet.GetComponent<PlanetController>();
 
-        List<GameObject> pool = pools[controller.planetId];
+        List<GameObject> pool = pools[controller.PlanetId];
         if (pool.Count >= maxPlanetChacheSize)
         {
         Destroy(planet);

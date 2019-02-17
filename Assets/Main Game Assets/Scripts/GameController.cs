@@ -89,11 +89,11 @@ public class GameController : PersistableObject
     {
         level = 2;
         savedShipSpeed = playerControllerScript.speed;
-        savedPlanetsSpeed = planetSpawner.speed;
 
         isPlaying = true;
         uiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
+        planetSpawner.SetPlayingMode(true);
         StartCoroutine("SpawnMissiles");
     }
 
@@ -102,7 +102,7 @@ public class GameController : PersistableObject
         if (!firstRun)
         {
             playerControllerScript.speed = 0f;
-            planetSpawner.speed = 0f;
+            planetSpawner.SetPlayingMode(false);
         }
         playerControllerScript.SetPlayingMode(false);
         DestroyShip();
@@ -119,7 +119,7 @@ public class GameController : PersistableObject
             isPlaying = false;
             SpawnShip(currentShipPrefab);
             playerControllerScript.speed = savedShipSpeed;
-            planetSpawner.speed = savedPlanetsSpeed;
+            planetSpawner.SetPlayingMode(true);
             uiInterface.SetActive(true);
         }
         firstRun = false;
