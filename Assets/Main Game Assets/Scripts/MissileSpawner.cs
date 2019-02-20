@@ -10,7 +10,7 @@ public class MissileSpawner : MonoBehaviour
     public Transform playerTransform;
     public float radius;
 
-   public void SpawnMissile(int num)
+   public void SpawnMissiles(int num)
     {
         for (int i = 0; i < num; i++)
         {

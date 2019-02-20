@@ -14,6 +14,7 @@ public class GameController : PersistableObject
     public GameObject player;
     public MissileSpawner missileSpawner;
     public PlanetSpawner planetSpawner;
+    public IncentiveSpawner IncentiveSpawner;
 
     public PersistentStorage persistentStorage;
 
@@ -94,7 +95,8 @@ public class GameController : PersistableObject
         uiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
         planetSpawner.SetPlayingMode(true);
-        StartCoroutine("SpawnMissiles");
+        //StartCoroutine("SpawnMissiles");
+        StartCoroutine("SpawnIncentives");
     }
 
     private void StopGame()
@@ -108,6 +110,7 @@ public class GameController : PersistableObject
         DestroyShip();
         DestroyCoins();
         StopCoroutine("SpawnMissiles");
+        StopCoroutine("SpawnIncentives");
         StartCoroutine("ActivateInterface");
     }
 
@@ -137,12 +140,21 @@ public class GameController : PersistableObject
         }
     }
 
+    private IEnumerator SpawnIncentives()
+    {
+        while (true)
+        {
+            IncentiveSpawner.SpawnIncentive();
+            yield return new WaitForSeconds(10f);
+        }
+    }
+
     private IEnumerator SpawnMissiles()
     {
         while (true)
         {
             DestroyMissiles();
-            missileSpawner.SpawnMissile(level);
+            missileSpawner.SpawnMissiles(level);
             level += 1;
             yield return new WaitForSeconds(10f);
         }

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public float tilt;
+    public float magnetRadius;
     public float degreesRotatePerFrame;
     public float missileTargetUpdateThreshold;
 
@@ -45,6 +46,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        Move();
+        MagnetCoins();
+    }
+
+    private void Move()
     {
 
         scrollHolderTransform.position = new Vector3
@@ -100,7 +107,6 @@ public class PlayerController : MonoBehaviour
                 lerpedTargetRotationZ
             ));
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -121,4 +127,22 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void MagnetCoins()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, magnetRadius);
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            if (hitColliders[i].tag == "Coin")
+            {
+                Vector3 oldPos = hitColliders[i].gameObject.transform.position;
+                Vector3 velocity = (transform.position - oldPos).normalized;
+                Vector3 newPos = oldPos + velocity * 10f * Time.deltaTime;
+                hitColliders[i].gameObject.transform.position = newPos;
+            }
+            i++;
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ public class PlanetSpawner : MonoBehaviour
     
     public void SetPlayingMode(bool isPlaying)
     {
-        Collider[] colliders = Physics.OverlapSphere(playerTransform.position, 25);
+        Collider[] colliders = Physics.OverlapSphere(playerTransform.position, 50);
         foreach (Collider col in colliders)
         {
             if (col.tag == "Environment")
@@ -48,7 +48,7 @@ public class PlanetSpawner : MonoBehaviour
         {
             float randomX = Random.Range(-radius, radius);
             float randomZ = Random.Range(-radius, radius);
-            Vector3 position = new Vector3(randomX, -10f, randomZ);
+            Vector3 position = new Vector3(randomX, -Random.Range(7f, 30f), randomZ);
             SpawnPlanetAtPosition(position);
         }
     }
@@ -82,7 +82,7 @@ public class PlanetSpawner : MonoBehaviour
         float newZ = x * Mathf.Sin(randomAngle) + z * Mathf.Cos(randomAngle);
 
         Vector3 randomPosition = playerTransform.position + new Vector3(newX, 0f, newZ) * radius;
-        randomPosition.y = -10f;
+        randomPosition.y = -Random.Range(7f, 30f);
         SpawnPlanetAtPosition(randomPosition);
     }
 

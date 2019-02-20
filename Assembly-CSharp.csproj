@@ -62,12 +62,12 @@
   <ItemGroup>
     <Compile Include="Assets\Main Game Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\CoinController.cs" />
-    <Compile Include="Assets\Main Game Assets\Scripts\CoinSpawner.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\ExplosionController.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\GameDataReader.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\GameDataWriter.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\IncentiveController.cs" />
+    <Compile Include="Assets\Main Game Assets\Scripts\IncentiveSpawner.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\MissileController.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\MissileSpawner.cs" />
     <Compile Include="Assets\Main Game Assets\Scripts\PersistableObject.cs" />
