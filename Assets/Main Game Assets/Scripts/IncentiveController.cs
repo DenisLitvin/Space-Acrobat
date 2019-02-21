@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncentiveController : MonoBehaviour
+public abstract class IncentiveController : MonoBehaviour
 {
     public GameObject signPrefab;
 
@@ -14,7 +14,11 @@ public class IncentiveController : MonoBehaviour
         canvas = GameObject.FindGameObjectWithTag("Canvas");
         sign = Instantiate(signPrefab, Vector3.zero, Quaternion.identity);
         sign.transform.SetParent(canvas.transform, false);
+        CreateIncentive();
     }
+
+    public abstract void CreateIncentive();
+    public abstract bool ShouldShowSign();
 
     private void Update()
     {
@@ -31,7 +35,7 @@ public class IncentiveController : MonoBehaviour
         Vector2 screenPoint = Camera.main.WorldToViewportPoint(gameObject.transform.position);
 
         bool onScreen = screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-        sign.SetActive(!onScreen);
+        sign.SetActive(!onScreen && ShouldShowSign());
 
         if (sign.activeSelf)
         {

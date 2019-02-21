@@ -8,7 +8,6 @@ public class IncentiveSpawner : MonoBehaviour
 
     public GameObject coinPrefab;
     public GameObject incentivePrefab;
-    public GameObject signPrefab;
 
     public float radius;
 
@@ -31,10 +30,12 @@ public class IncentiveSpawner : MonoBehaviour
         {
             Destroy(currentIncentives[i]);
         }
+        currentIncentives.Clear();
     }
 
     private void SpawnCoins(int num)
     {
+        print(currentIncentives.Count);
         float rand = Random.Range(0f, 2 * Mathf.PI);
 
         Vector2 vector = new Vector2(Mathf.Sin(rand), Mathf.Cos(rand));
@@ -44,14 +45,5 @@ public class IncentiveSpawner : MonoBehaviour
 
         GameObject incentive = Instantiate(incentivePrefab, pos, Quaternion.identity);
         currentIncentives.Add(incentive);
-
-        float coinOffset = 1f;
-
-        for (int i = 0; i < num; i++)
-        {
-            Vector3 coinPosition = new Vector3(pos.x + i * coinOffset, pos.y, pos.z);
-            GameObject obj = Instantiate(coinPrefab, coinPosition, coinPrefab.transform.rotation);
-            currentIncentives.Add(obj);
-        }
     }
 }

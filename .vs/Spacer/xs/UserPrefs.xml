@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{75942997-D018-8683-DFBC-0158D1B21B85}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Main Game Assets/Scripts/PlanetController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CoinsIncentive.cs">
     <Files>
       <File FileName="Assets/Main Game Assets/Scripts/GameController.cs" Line="99" Column="32" />
-      <File FileName="Assets/Main Game Assets/Scripts/PlayerController.cs" Line="42" Column="25" />
+      <File FileName="Assets/Main Game Assets/Scripts/PlayerController.cs" Line="143" Column="52" />
       <File FileName="Assets/Main Game Assets/Scripts/MissileSpawner.cs" Line="29" Column="1" />
       <File FileName="Assets/Main Game Assets/Scripts/MissileController.cs" Line="20" Column="5" />
-      <File FileName="Assets/Main Game Assets/Scripts/IncentiveSpawner.cs" Line="28" Column="1" />
-      <File FileName="Assets/Main Game Assets/Scripts/IncentiveController.cs" Line="14" Column="61" />
+      <File FileName="Assets/Main Game Assets/Scripts/IncentiveSpawner.cs" Line="46" Column="22" />
+      <File FileName="Assets/Main Game Assets/Scripts/IncentiveController.cs" Line="24" Column="20" />
+      <File FileName="Assets/CoinsIncentive.cs" Line="1" Column="1" />
       <File FileName="Assets/Main Game Assets/Scripts/PlanetSpawner.cs" Line="25" Column="47" />
       <File FileName="Assets/Main Game Assets/Scripts/PlanetController.cs" Line="24" Column="57" />
+      <File FileName="Assets/Main Game Assets/Scripts/CoinController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

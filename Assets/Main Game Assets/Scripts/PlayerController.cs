@@ -139,6 +139,9 @@ public class PlayerController : MonoBehaviour
                 Vector3 oldPos = hitColliders[i].gameObject.transform.position;
                 Vector3 velocity = (transform.position - oldPos).normalized;
                 Vector3 newPos = oldPos + velocity * 10f * Time.deltaTime;
+                float scale = (transform.position - newPos).sqrMagnitude / (magnetRadius * magnetRadius);
+                scale = Mathf.Clamp(scale, 0.2f, 1f);
+                hitColliders[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
                 hitColliders[i].gameObject.transform.position = newPos;
             }
             i++;
