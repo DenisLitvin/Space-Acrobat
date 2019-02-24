@@ -125,6 +125,10 @@ public class PlayerController : MonoBehaviour
                 Destroy(other.gameObject);
                 gameController.HandleCoinCollect();
             }
+            else if (other.gameObject.tag == "Boost")
+            {
+                print("boost");
+            }
         }
     }
 
