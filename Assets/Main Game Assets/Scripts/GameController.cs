@@ -45,8 +45,12 @@ public class GameController : PersistableObject
         {
             persistentStorage.Load(this);
         }
-        SpawnShip(currentShipPrefab);
         daysInGame += 1;
+
+        SpawnShip(currentShipPrefab);
+
+        ShowArrowButtonsIfNeeded();
+        ShowLockOnShipIfNeeded();
     }
 
     private void Update()
@@ -66,8 +70,7 @@ public class GameController : PersistableObject
         if (currentShipPrefab <= 0) return;
         currentShipPrefab--;
 
-        rightButton.interactable = true;
-        ShowButtonIfNeeded(leftButton);
+        ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
 
         DestroyShip();
@@ -79,8 +82,7 @@ public class GameController : PersistableObject
         if (currentShipPrefab >= spaceshipPrefabs.Length - 1) return;
         currentShipPrefab++;
 
-        leftButton.interactable = true;
-        ShowButtonIfNeeded(rightButton);
+        ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
 
         DestroyShip();
@@ -89,20 +91,26 @@ public class GameController : PersistableObject
 
     private void ShowLockOnShipIfNeeded() {
         var color = LockImage.color;
-        color.a = 0f;
-        LockImage.color = color;
-    }
 
-    private void ShowButtonIfNeeded(Button button) 
-    {
-         if (currentShipPrefab <= 0 || currentShipPrefab >= spaceshipPrefabs.Length - 1)
+        var controller = spaceshipPrefabs[currentShipPrefab].GetComponent<ShipRequirementsController>();
+
+        if (controller.requirements.Days > daysInGame
+            || controller.requirements.Coins > coins
+            || controller.requirements.MissilesCollapsed > missileCollapsed)
         {
-            button.interactable = false;
+            color.a = 1f;
         }
         else
         {
-            button.interactable = true;
+            color.a = 0f;
         }
+        LockImage.color = color;
+    }
+
+    private void ShowArrowButtonsIfNeeded() 
+    {
+        leftButton.interactable = currentShipPrefab > 0;
+        rightButton.interactable = currentShipPrefab < spaceshipPrefabs.Length - 1;
     }
 
     public void HandleDestroyShip()
