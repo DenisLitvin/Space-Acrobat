@@ -5,18 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [System.NonSerialized]
-    public Vector3 missileTarget;
+    public Vector3 MissileTarget;
 
-    public float speed;
-    public float tilt;
-    public float magnetRadius;
-    public float degreesRotatePerFrame;
-    public float missileTargetUpdateThreshold;
+    public float Speed;
+    public float Boost;
+    public float Tilt;
+    public float MagnetRadius;
+    public float DegreesRotatePerFrame;
+    public float MissileTargetUpdateThreshold;
 
-    public Joystick joystick;
-    public Transform scrollHolderTransform;
+    public Joystick Joystick;
+    public Transform ScrollHolderTransform;
 
-    public GameObject explosionPrefab;
+    public GameObject ExplosionPrefab;
 
     private Rigidbody rb;
     private GameController gameController;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private float oldRotationZ;
     private bool isPlaying = false;
     private float lastMissileTargetSetTime;
+    private float boostEnd;
 
     public void SetPlayingMode(bool isPlaying)
     {
@@ -31,8 +33,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.identity;
         }
-        joystick.joystickMode = JoystickMode.AllAxis;
-        joystick.gameObject.SetActive(isPlaying);
+        Joystick.joystickMode = JoystickMode.AllAxis;
+        Joystick.gameObject.SetActive(isPlaying);
         this.isPlaying = isPlaying;
     }
 
@@ -54,25 +56,26 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
 
-        scrollHolderTransform.position = new Vector3
+        ScrollHolderTransform.position = new Vector3
         (
             transform.position.x,
-            scrollHolderTransform.position.y,
+            ScrollHolderTransform.position.y,
             transform.position.z
         );
 
-        rb.velocity = transform.forward * speed;
+        float boost = (boostEnd > Time.time) ? Boost : 0;
+        rb.velocity = transform.forward * (Speed + boost);
 
         if (!isPlaying) return;
 
-        Vector3 moveVector = (Vector3.right * joystick.Horizontal + Vector3.forward * joystick.Vertical);
+        Vector3 moveVector = (Vector3.right * Joystick.Horizontal + Vector3.forward * Joystick.Vertical);
 
         Vector3 oldRotation = transform.rotation.eulerAngles;
 
-        if (Time.time - lastMissileTargetSetTime >= missileTargetUpdateThreshold)
+        if (Time.time - lastMissileTargetSetTime >= MissileTargetUpdateThreshold)
         {
             lastMissileTargetSetTime = Time.time;
-            missileTarget = transform.position + transform.forward * 0.7f;
+            MissileTarget = transform.position + transform.forward * 0.7f;
         }
 
         if (moveVector != Vector3.zero)
@@ -81,10 +84,10 @@ public class PlayerController : MonoBehaviour
 
             float diff = (lookRotation.y - oldRotation.y + 180f) % 360f - 180f;
 
-            float norm = Mathf.Max(-degreesRotatePerFrame, Mathf.Min(degreesRotatePerFrame, diff < -180f ? diff + 360f : diff));
+            float norm = Mathf.Max(-DegreesRotatePerFrame, Mathf.Min(DegreesRotatePerFrame, diff < -180f ? diff + 360f : diff));
             float targetRotationY = norm + oldRotation.y;
 
-            float targetRotationZ = (targetRotationY - oldRotation.y) * -tilt;
+            float targetRotationZ = (targetRotationY - oldRotation.y) * -Tilt;
             float lerpedTargetRotationZ = Mathf.Lerp(oldRotationZ, targetRotationZ, 0.05f);
 
             oldRotationZ = lerpedTargetRotationZ;
@@ -117,7 +120,7 @@ public class PlayerController : MonoBehaviour
             {
                 isPlaying = false;
                 gameController.HandleDestroyShip();
-                GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
                 Destroy(explosion, 10f);
             }
             else if (other.gameObject.tag == "Coin")
@@ -127,14 +130,14 @@ public class PlayerController : MonoBehaviour
             }
             else if (other.gameObject.tag == "Boost")
             {
-                print("boost");
+                boostEnd = Time.time + 10f;
             }
         }
     }
 
     private void MagnetCoins()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, magnetRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, MagnetRadius);
         int i = 0;
         while (i < hitColliders.Length)
         {
@@ -143,7 +146,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 oldPos = hitColliders[i].gameObject.transform.position;
                 Vector3 velocity = (transform.position - oldPos).normalized;
                 Vector3 newPos = oldPos + velocity * 10f * Time.deltaTime;
-                float scale = (transform.position - newPos).sqrMagnitude / (magnetRadius * magnetRadius);
+                float scale = (transform.position - newPos).sqrMagnitude / (MagnetRadius * MagnetRadius);
                 scale = Mathf.Clamp(scale, 0.2f, 1f);
                 hitColliders[i].gameObject.transform.localScale = new Vector3(scale, scale, scale);
                 hitColliders[i].gameObject.transform.position = newPos;

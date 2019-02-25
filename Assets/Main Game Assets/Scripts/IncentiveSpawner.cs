@@ -28,8 +28,8 @@ public class IncentiveSpawner : MonoBehaviour
         Vector3 pos = playerTransform.position + new Vector3(offset.x, 0f, offset.y);
         pos.y = 0f;
 
-        int randIncentive = Random.Range(0, incentivePrefabs.Length - 1);
-        GameObject incentive = Instantiate(incentivePrefabs[randIncentive], pos, Quaternion.identity);
+        int randIncentive = Random.Range(0, incentivePrefabs.Length);
+        GameObject incentive = Instantiate(incentivePrefabs[randIncentive], pos, incentivePrefabs[randIncentive].transform.rotation);
         currentIncentives.Add(incentive);
     }
 

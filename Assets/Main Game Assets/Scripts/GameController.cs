@@ -9,7 +9,13 @@ public class GameController : PersistableObject
 
     public GameObject uiInterface;
 
-    public Text coinText;
+    public Image LockImage;
+    public Button leftButton;
+    public Button rightButton;
+
+    public Text CoinsCollectedText;
+    public Text DaysInGameText;
+    public Text MissilesCollapsedText;
 
     public GameObject player;
     public MissileSpawner missileSpawner;
@@ -21,12 +27,13 @@ public class GameController : PersistableObject
     private PlayerController playerControllerScript;
 
     private int level = 1;
-    private int coins = 0;
-    private int currentShipPrefab = 0;
+    private int coins;
+    private int daysInGame;
+    private int missileCollapsed;
+    private int currentShipPrefab;
     private bool isPlaying = false;
     private bool firstRun = true;
     private float savedShipSpeed;
-    private float savedPlanetsSpeed;
 
     private void Start()
     {
@@ -39,11 +46,14 @@ public class GameController : PersistableObject
             persistentStorage.Load(this);
         }
         SpawnShip(currentShipPrefab);
+        daysInGame += 1;
     }
 
     private void Update()
     {
-        coinText.text = coins.ToString();
+        CoinsCollectedText.text = coins.ToString();
+        DaysInGameText.text = daysInGame.ToString();
+        MissilesCollapsedText.text = missileCollapsed.ToString();
     }
 
     public void HandlePlayButton()
@@ -54,17 +64,45 @@ public class GameController : PersistableObject
     public void HandleLeftArrowButton()
     {
         if (currentShipPrefab <= 0) return;
-        DestroyShip();
         currentShipPrefab--;
+
+        rightButton.interactable = true;
+        ShowButtonIfNeeded(leftButton);
+        ShowLockOnShipIfNeeded();
+
+        DestroyShip();
         SpawnShip(currentShipPrefab);
     }
 
     public void HandleRightArrowButton()
     {
         if (currentShipPrefab >= spaceshipPrefabs.Length - 1) return;
-        DestroyShip();
         currentShipPrefab++;
+
+        leftButton.interactable = true;
+        ShowButtonIfNeeded(rightButton);
+        ShowLockOnShipIfNeeded();
+
+        DestroyShip();
         SpawnShip(currentShipPrefab);
+    }
+
+    private void ShowLockOnShipIfNeeded() {
+        var color = LockImage.color;
+        color.a = 0f;
+        LockImage.color = color;
+    }
+
+    private void ShowButtonIfNeeded(Button button) 
+    {
+         if (currentShipPrefab <= 0 || currentShipPrefab >= spaceshipPrefabs.Length - 1)
+        {
+            button.interactable = false;
+        }
+        else
+        {
+            button.interactable = true;
+        }
     }
 
     public void HandleDestroyShip()
@@ -89,13 +127,13 @@ public class GameController : PersistableObject
     private void StartGame()
     {
         level = 2;
-        savedShipSpeed = playerControllerScript.speed;
+        savedShipSpeed = playerControllerScript.Speed;
 
         isPlaying = true;
         uiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
         planetSpawner.SetPlayingMode(true);
-        //StartCoroutine("SpawnMissiles");
+        StartCoroutine("SpawnMissiles");
         StartCoroutine("SpawnIncentives");
     }
 
@@ -103,7 +141,7 @@ public class GameController : PersistableObject
     {
         if (!firstRun)
         {
-            playerControllerScript.speed = 0f;
+            playerControllerScript.Speed = 0f;
             planetSpawner.SetPlayingMode(false);
         }
         playerControllerScript.SetPlayingMode(false);
@@ -121,7 +159,7 @@ public class GameController : PersistableObject
         {
             isPlaying = false;
             SpawnShip(currentShipPrefab);
-            playerControllerScript.speed = savedShipSpeed;
+            playerControllerScript.Speed = savedShipSpeed;
             planetSpawner.SetPlayingMode(true);
             uiInterface.SetActive(true);
         }
@@ -183,11 +221,15 @@ public class GameController : PersistableObject
     {
         writer.Write(currentShipPrefab);
         writer.Write(coins);
+        writer.Write(daysInGame);
+        writer.Write(missileCollapsed);
     }
 
     public override void Load(GameDataReader reader)
     {
         currentShipPrefab = reader.ReadInt();
         coins = reader.ReadInt();
+        daysInGame = reader.ReadInt();
+        missileCollapsed = reader.ReadInt();
     }
 }

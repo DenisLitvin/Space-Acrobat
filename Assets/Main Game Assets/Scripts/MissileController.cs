@@ -77,7 +77,7 @@ public class MissileController : MonoBehaviour
     private void Rotate()
     {
         rb = GetComponent<Rigidbody>();
-        Vector3 toPlayer = (playerController.missileTarget - rb.transform.position).normalized;
+        Vector3 toPlayer = (playerController.MissileTarget - rb.transform.position).normalized;
         Vector3 lookRotation = Quaternion.LookRotation(toPlayer).eulerAngles;
         Vector3 oldRotation = rb.rotation.eulerAngles;
 
