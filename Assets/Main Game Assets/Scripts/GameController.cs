@@ -5,13 +5,14 @@ using System.Collections.Generic;
 
 public class GameController : PersistableObject
 {
-    public GameObject[] spaceshipPrefabs;
+    public GameObject[] SpaceshipPrefabs;
 
-    public GameObject uiInterface;
+    public GameObject UiInterface;
 
     public Image LockImage;
-    public Button leftButton;
-    public Button rightButton;
+    public Button LeftButton;
+    public Button RightButton;
+    public Button PlayButton;
 
     public Text CoinsCollectedText;
     public Text DaysInGameText;
@@ -29,7 +30,7 @@ public class GameController : PersistableObject
     private int level = 1;
     private int coins;
     private int daysInGame;
-    private int missileCollapsed;
+    private int missilesCollapsed;
     private int currentShipPrefab;
     private bool isPlaying = false;
     private bool firstRun = true;
@@ -57,7 +58,7 @@ public class GameController : PersistableObject
     {
         CoinsCollectedText.text = coins.ToString();
         DaysInGameText.text = daysInGame.ToString();
-        MissilesCollapsedText.text = missileCollapsed.ToString();
+        MissilesCollapsedText.text = missilesCollapsed.ToString();
     }
 
     public void HandlePlayButton()
@@ -72,6 +73,7 @@ public class GameController : PersistableObject
 
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
+        ShowPlayButtonOnShipIfNeeded();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
@@ -79,38 +81,40 @@ public class GameController : PersistableObject
 
     public void HandleRightArrowButton()
     {
-        if (currentShipPrefab >= spaceshipPrefabs.Length - 1) return;
+        if (currentShipPrefab >= SpaceshipPrefabs.Length - 1) return;
         currentShipPrefab++;
 
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
+        ShowPlayButtonOnShipIfNeeded();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
     }
 
+    private void ShowPlayButtonOnShipIfNeeded()
+    {
+        PlayButton.interactable = CurrentShipAvailable();
+    }
+
     private void ShowLockOnShipIfNeeded() {
         var color = LockImage.color;
-
-        var controller = spaceshipPrefabs[currentShipPrefab].GetComponent<ShipRequirementsController>();
-
-        if (controller.requirements.Days > daysInGame
-            || controller.requirements.Coins > coins
-            || controller.requirements.MissilesCollapsed > missileCollapsed)
-        {
-            color.a = 1f;
-        }
-        else
-        {
-            color.a = 0f;
-        }
+        color.a = CurrentShipAvailable() ? 0f : 1f;
         LockImage.color = color;
+    }
+
+    private bool CurrentShipAvailable()
+    {
+        var controller = SpaceshipPrefabs[currentShipPrefab].GetComponent<ShipRequirementsController>();
+        return controller.requirements.Days <= daysInGame
+            && controller.requirements.Coins <= coins
+            && controller.requirements.MissilesCollapsed <= missilesCollapsed;
     }
 
     private void ShowArrowButtonsIfNeeded() 
     {
-        leftButton.interactable = currentShipPrefab > 0;
-        rightButton.interactable = currentShipPrefab < spaceshipPrefabs.Length - 1;
+        LeftButton.interactable = currentShipPrefab > 0;
+        RightButton.interactable = currentShipPrefab < SpaceshipPrefabs.Length - 1;
     }
 
     public void HandleDestroyShip()
@@ -127,7 +131,7 @@ public class GameController : PersistableObject
 
     private void SpawnShip(int id)
     {
-        GameObject shipPrefab = spaceshipPrefabs[id];
+        GameObject shipPrefab = SpaceshipPrefabs[id];
         GameObject ship = Instantiate(shipPrefab, shipPrefab.transform.localPosition, shipPrefab.transform.localRotation);
         ship.transform.SetParent(player.transform, false);
     }
@@ -138,7 +142,7 @@ public class GameController : PersistableObject
         savedShipSpeed = playerControllerScript.Speed;
 
         isPlaying = true;
-        uiInterface.SetActive(false);
+        UiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
         planetSpawner.SetPlayingMode(true);
         StartCoroutine("SpawnMissiles");
@@ -169,7 +173,7 @@ public class GameController : PersistableObject
             SpawnShip(currentShipPrefab);
             playerControllerScript.Speed = savedShipSpeed;
             planetSpawner.SetPlayingMode(true);
-            uiInterface.SetActive(true);
+            UiInterface.SetActive(true);
         }
         firstRun = false;
         yield break;
@@ -230,7 +234,7 @@ public class GameController : PersistableObject
         writer.Write(currentShipPrefab);
         writer.Write(coins);
         writer.Write(daysInGame);
-        writer.Write(missileCollapsed);
+        writer.Write(missilesCollapsed);
     }
 
     public override void Load(GameDataReader reader)
@@ -238,6 +242,6 @@ public class GameController : PersistableObject
         currentShipPrefab = reader.ReadInt();
         coins = reader.ReadInt();
         daysInGame = reader.ReadInt();
-        missileCollapsed = reader.ReadInt();
+        missilesCollapsed = reader.ReadInt();
     }
 }
