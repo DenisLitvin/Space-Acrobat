@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class GameController : PersistableObject
 {
     public GameObject[] SpaceshipPrefabs;
+    public GameObject ScorePlusPrefab;
 
     public GameObject UiInterface;
 
@@ -13,45 +14,55 @@ public class GameController : PersistableObject
     public Button LeftButton;
     public Button RightButton;
     public Button PlayButton;
+    public Text ShipDescription;
 
     public Text CoinsCollectedText;
     public Text DaysInGameText;
+    public Text ScoreText;
     public Text MissilesCollapsedText;
 
-    public GameObject player;
-    public MissileSpawner missileSpawner;
-    public PlanetSpawner planetSpawner;
+    public GameObject Player;
+    public MissileSpawner MissileSpawner;
+    public PlanetSpawner PlanetSpawner;
     public IncentiveSpawner IncentiveSpawner;
 
-    public PersistentStorage persistentStorage;
+    public PersistentStorage PersistentStorage;
 
     private PlayerController playerControllerScript;
+    private GameObject canvas;
+
+    private int score;
+    private int topScore;
+    private float nextScoreUpdateTime;
 
     private int level = 1;
     private int coins;
     private int daysInGame;
     private int missilesCollapsed;
     private int currentShipPrefab;
-    private bool isPlaying = false;
+    private bool isPlaying;
     private bool firstRun = true;
     private float savedShipSpeed;
 
     private void Start()
     {
-        playerControllerScript = player.GetComponent<PlayerController>();
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        playerControllerScript = Player.GetComponent<PlayerController>();
         Application.targetFrameRate = 60;
         StopGame();
 
-        if (persistentStorage.SaveFileExist())
+        if (PersistentStorage.SaveFileExist())
         {
-            persistentStorage.Load(this);
+            PersistentStorage.Load(this);
         }
         daysInGame += 1;
-
+        score = topScore;
         SpawnShip(currentShipPrefab);
 
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
+        ShowPlayButtonOnShipIfNeeded();
+        UpdateShipDescriptionText();
     }
 
     private void Update()
@@ -59,6 +70,15 @@ public class GameController : PersistableObject
         CoinsCollectedText.text = coins.ToString();
         DaysInGameText.text = daysInGame.ToString();
         MissilesCollapsedText.text = missilesCollapsed.ToString();
+        ScoreText.text = score.ToString();
+
+        if (isPlaying && Time.time > nextScoreUpdateTime)
+        {
+            score += 1;
+            nextScoreUpdateTime = Time.time + 1f;
+            var scorePlus = Instantiate(ScorePlusPrefab);
+            scorePlus.transform.SetParent(canvas.transform, false);
+        }
     }
 
     public void HandlePlayButton()
@@ -74,6 +94,7 @@ public class GameController : PersistableObject
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
         ShowPlayButtonOnShipIfNeeded();
+        UpdateShipDescriptionText();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
@@ -87,9 +108,33 @@ public class GameController : PersistableObject
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
         ShowPlayButtonOnShipIfNeeded();
+        UpdateShipDescriptionText();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
+    }
+
+    private void UpdateShipDescriptionText()
+    {
+        ShipDescription.text = currentShipPrefab.ToString();
+        var requirements = SpaceshipPrefabs[currentShipPrefab].GetComponent<ShipRequirementsController>().requirements;
+
+        string str = "";
+
+        if (requirements.Coins > 0 && requirements.Coins > coins)
+        {
+            str += "coins collected            " + coins.ToString() + "/" + requirements.Coins.ToString() + "\n";
+        }
+        if (requirements.Days > 0 && requirements.Days > daysInGame)
+        {
+            str += "consecutive days played    " + daysInGame.ToString() + "/" + requirements.Days.ToString() + "\n"; 
+        }
+        if (requirements.MissilesCollapsed > 0 && requirements.MissilesCollapsed > missilesCollapsed)
+        {
+            str += "missiles collapsed         " + missilesCollapsed.ToString() + "/" + requirements.MissilesCollapsed.ToString() + "\n";
+        }
+
+        ShipDescription.text = str;
     }
 
     private void ShowPlayButtonOnShipIfNeeded()
@@ -121,7 +166,7 @@ public class GameController : PersistableObject
     {
         DestroyMissiles();
         StopGame();
-        persistentStorage.Save(this);
+        PersistentStorage.Save(this);
     }
 
     public void HandleCoinCollect()
@@ -133,18 +178,20 @@ public class GameController : PersistableObject
     {
         GameObject shipPrefab = SpaceshipPrefabs[id];
         GameObject ship = Instantiate(shipPrefab, shipPrefab.transform.localPosition, shipPrefab.transform.localRotation);
-        ship.transform.SetParent(player.transform, false);
+        ship.transform.SetParent(Player.transform, false);
     }
 
     private void StartGame()
     {
+        isPlaying = true;
+
         level = 2;
+        score = 0;
         savedShipSpeed = playerControllerScript.Speed;
 
-        isPlaying = true;
         UiInterface.SetActive(false);
         playerControllerScript.SetPlayingMode(true);
-        planetSpawner.SetPlayingMode(true);
+        PlanetSpawner.SetPlayingMode(true);
         StartCoroutine("SpawnMissiles");
         StartCoroutine("SpawnIncentives");
     }
@@ -154,8 +201,12 @@ public class GameController : PersistableObject
         if (!firstRun)
         {
             playerControllerScript.Speed = 0f;
-            planetSpawner.SetPlayingMode(false);
+            PlanetSpawner.SetPlayingMode(false);
         }
+
+        isPlaying = false;
+        topScore = Mathf.Max(topScore, score);
+
         playerControllerScript.SetPlayingMode(false);
         DestroyShip();
         DestroyCoins();
@@ -167,12 +218,13 @@ public class GameController : PersistableObject
     IEnumerator ActivateInterface()
     {
         yield return new WaitForSeconds(2f);
-        if (!firstRun && isPlaying)
+        if (!firstRun)
         {
-            isPlaying = false;
+            //isPlaying = false;
+            score = topScore;
             SpawnShip(currentShipPrefab);
             playerControllerScript.Speed = savedShipSpeed;
-            planetSpawner.SetPlayingMode(true);
+            PlanetSpawner.SetPlayingMode(true);
             UiInterface.SetActive(true);
         }
         firstRun = false;
@@ -182,9 +234,9 @@ public class GameController : PersistableObject
     private void DestroyShip()
     {
         int i = 0;
-        while (i < player.transform.childCount)
+        while (i < Player.transform.childCount)
         {
-            Transform child = player.transform.GetChild(i);
+            Transform child = Player.transform.GetChild(i);
             Destroy(child.gameObject);
             i++;
         }
@@ -204,7 +256,7 @@ public class GameController : PersistableObject
         while (true)
         {
             DestroyMissiles();
-            missileSpawner.SpawnMissiles(level);
+            MissileSpawner.SpawnMissiles(level);
             level += 1;
             yield return new WaitForSeconds(10f);
         }
@@ -235,6 +287,7 @@ public class GameController : PersistableObject
         writer.Write(coins);
         writer.Write(daysInGame);
         writer.Write(missilesCollapsed);
+        writer.Write(topScore);
     }
 
     public override void Load(GameDataReader reader)
@@ -243,5 +296,6 @@ public class GameController : PersistableObject
         coins = reader.ReadInt();
         daysInGame = reader.ReadInt();
         missilesCollapsed = reader.ReadInt();
+        topScore = reader.ReadInt();
     }
 }

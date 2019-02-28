@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private GameController gameController;
 
     private float oldRotationZ;
-    private bool isPlaying = false;
+    private bool isPlaying;
     private float lastMissileTargetSetTime;
     private float boostEnd;
 
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         }
         Joystick.joystickMode = JoystickMode.AllAxis;
         Joystick.gameObject.SetActive(isPlaying);
+        boostEnd = 0f;
         this.isPlaying = isPlaying;
     }
 
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
             transform.position.z
         );
 
-        float boost = (boostEnd > Time.time) ? Boost : 0;
+        float boost = (boostEnd > Time.time && isPlaying) ? Boost : 0f;
         rb.velocity = transform.forward * (Speed + boost);
 
         if (!isPlaying) return;

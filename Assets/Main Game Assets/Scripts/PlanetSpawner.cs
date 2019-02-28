@@ -96,7 +96,7 @@ public class PlanetSpawner : MonoBehaviour
         planet.transform.position = position;
         planet.transform.rotation = rotation;
         planet.transform.localScale = new Vector3(scale, scale, scale);
-        //planet.transform.parent = transform;
+
         PlanetController controller = planet.GetComponent<PlanetController>();
         controller.PlanetSpawner = gameObject;
         controller.PlayerTransform = playerTransform;
