@@ -8,7 +8,7 @@ public class CoinsIncentiveController : IncentiveController
 
     public override void CreateIncentive()
     {
-        float coinOffset = 1f;
+        float coinOffset = 1.1f;
 
         float randRows = Random.Range(2, 10);
         float randColumns = Random.Range(2, 10);

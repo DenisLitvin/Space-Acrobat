@@ -38,7 +38,7 @@ public class GameController : PersistableObject
     private int level = 1;
     private int coins;
     private int daysInGame;
-    private int missilesCollapsed;
+    private float missilesCollapsed;
     private int currentShipPrefab;
     private bool isPlaying;
     private bool firstRun = true;
@@ -162,7 +162,12 @@ public class GameController : PersistableObject
         RightButton.interactable = currentShipPrefab < SpaceshipPrefabs.Length - 1;
     }
 
-    public void HandleDestroyShip()
+    public void HandleMissileCollapse()
+    {
+        missilesCollapsed += 0.5f;
+    }
+
+    public void HandleShipDestroy()
     {
         DestroyMissiles();
         StopGame();
@@ -295,7 +300,7 @@ public class GameController : PersistableObject
         currentShipPrefab = reader.ReadInt();
         coins = reader.ReadInt();
         daysInGame = reader.ReadInt();
-        missilesCollapsed = reader.ReadInt();
+        missilesCollapsed = reader.ReadFloat();
         topScore = reader.ReadInt();
     }
 }

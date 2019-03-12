@@ -43,9 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         lastMissileTargetSetTime = Time.time;
         rb = GetComponent<Rigidbody>();
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("GameController");
-        GameObject controller = objs[0];
-        gameController = controller.GetComponent<GameController>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     private void FixedUpdate()
@@ -120,7 +118,7 @@ public class PlayerController : MonoBehaviour
             if (other.gameObject.tag == "Missile")
             {
                 isPlaying = false;
-                gameController.HandleDestroyShip();
+                gameController.HandleShipDestroy();
                 GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
                 Destroy(explosion, 10f);
             }

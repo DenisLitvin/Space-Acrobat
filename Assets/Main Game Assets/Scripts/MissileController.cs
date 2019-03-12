@@ -17,11 +17,14 @@ public class MissileController : MonoBehaviour
 
     private GameObject sign;
     private GameObject canvas;
+    private GameController gameController;
     private Rigidbody rb;
 
     private void Start()
     {
         canvas = GameObject.FindGameObjectWithTag("Canvas");
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
         sign = Instantiate(signPrefab, Vector3.zero, Quaternion.identity);
         sign.transform.SetParent(canvas.transform, false);
     }
@@ -118,13 +121,14 @@ public class MissileController : MonoBehaviour
         {
             Destroy();
             SpawnCoin();
+            gameController.HandleMissileCollapse();
         }
     }
 
     private void SpawnCoin()
     {
         float rand = Random.Range(0f, 1f);
-        if (rand < 0.99f)
+        if (rand < 0.2f)
         {
             Instantiate(coinPrefab, transform.position, coinPrefab.transform.rotation);
         }
