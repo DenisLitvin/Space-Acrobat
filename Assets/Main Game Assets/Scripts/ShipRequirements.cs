@@ -6,6 +6,6 @@ using UnityEngine;
 public class ShipRequirements
 {
     public int Coins;
-    public int Days;
+    public int Score;
     public int MissilesCollapsed;
 }
