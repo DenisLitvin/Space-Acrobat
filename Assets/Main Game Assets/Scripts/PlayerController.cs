@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public float Boost;
     public float Tilt;
     public float MagnetRadius;
-    public float DegreesRotatePerFrame;
+    public float Steering;
     public float MissileTargetUpdateThreshold;
 
     public Joystick Joystick;
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
             float diff = (lookRotation.y - oldRotation.y + 180f) % 360f - 180f;
 
-            float norm = Mathf.Max(-DegreesRotatePerFrame, Mathf.Min(DegreesRotatePerFrame, diff < -180f ? diff + 360f : diff));
+            float norm = Mathf.Max(-Steering, Mathf.Min(Steering, diff < -180f ? diff + 360f : diff));
             float targetRotationY = norm + oldRotation.y;
 
             float targetRotationZ = (targetRotationY - oldRotation.y) * -Tilt;

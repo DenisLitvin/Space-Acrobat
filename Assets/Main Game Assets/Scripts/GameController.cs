@@ -32,7 +32,7 @@ public class GameController : PersistableObject
 
     public PersistentStorage PersistentStorage;
 
-    private PlayerController playerControllerScript;
+    private PlayerController playerController;
     private GameObject canvas;
 
     private int topScore;
@@ -47,10 +47,13 @@ public class GameController : PersistableObject
     private bool firstRun = true;
     private float savedShipSpeed;
 
+    private float baseSpeed;
+    private float baseSteering;
+
     private void Start()
     {
         canvas = GameObject.FindGameObjectWithTag("Canvas");
-        playerControllerScript = Player.GetComponent<PlayerController>();
+        playerController = Player.GetComponent<PlayerController>();
         Application.targetFrameRate = 60;
         StopGame();
 
@@ -59,13 +62,16 @@ public class GameController : PersistableObject
             PersistentStorage.Load(this);
         }
         score = topScore;
+        baseSteering = playerController.Steering;
+        baseSpeed = playerController.Speed;
         SpawnShip(currentShipPrefab);
 
         ShowArrowButtonsIfNeeded();
         ShowLockOnShipIfNeeded();
         ShowPlayButtonOnShipIfNeeded();
         UpdateShipDescriptionText();
-        UpdateShipSpecItems();
+        UpdateShipSpecInterface();
+        UpdateShipSpecs();
     }
 
     private void Update()
@@ -98,7 +104,8 @@ public class GameController : PersistableObject
         ShowLockOnShipIfNeeded();
         ShowPlayButtonOnShipIfNeeded();
         UpdateShipDescriptionText();
-        UpdateShipSpecItems();
+        UpdateShipSpecInterface();
+        UpdateShipSpecs();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
@@ -113,13 +120,21 @@ public class GameController : PersistableObject
         ShowLockOnShipIfNeeded();
         ShowPlayButtonOnShipIfNeeded();
         UpdateShipDescriptionText();
-        UpdateShipSpecItems();
+        UpdateShipSpecInterface();
+        UpdateShipSpecs();
 
         DestroyShip();
         SpawnShip(currentShipPrefab);
     }
 
-    private void UpdateShipSpecItems()
+    private void UpdateShipSpecs()
+    {
+        var specs = SpaceshipPrefabs[currentShipPrefab].GetComponent<ShipInfoController>().specs;
+        playerController.Speed = baseSpeed + baseSpeed * specs.Speed;
+        playerController.Steering = baseSteering + baseSteering * specs.Steering;
+    }
+
+    private void UpdateShipSpecInterface()
     {
         var specs = SpaceshipPrefabs[currentShipPrefab].GetComponent<ShipInfoController>().specs;
         if (specs.Speed > 0)
@@ -223,10 +238,10 @@ public class GameController : PersistableObject
 
         level = 2;
         score = 0;
-        savedShipSpeed = playerControllerScript.Speed;
+        savedShipSpeed = playerController.Speed;
 
         UiInterface.SetActive(false);
-        playerControllerScript.SetPlayingMode(true);
+        playerController.SetPlayingMode(true);
         PlanetSpawner.SetPlayingMode(true);
         StartCoroutine("SpawnMissiles");
         StartCoroutine("SpawnIncentives");
@@ -236,14 +251,14 @@ public class GameController : PersistableObject
     {
         if (!firstRun)
         {
-            playerControllerScript.Speed = 0f;
+            playerController.Speed = 0f;
             PlanetSpawner.SetPlayingMode(false);
         }
 
         isPlaying = false;
         topScore = Mathf.Max(topScore, score);
 
-        playerControllerScript.SetPlayingMode(false);
+        playerController.SetPlayingMode(false);
         DestroyMissiles();
         DestroyIncentives();
         DestroyShip();
@@ -259,7 +274,7 @@ public class GameController : PersistableObject
         {
             score = topScore;
             SpawnShip(currentShipPrefab);
-            playerControllerScript.Speed = savedShipSpeed;
+            playerController.Speed = savedShipSpeed;
             PlanetSpawner.SetPlayingMode(true);
             UiInterface.SetActive(true);
         }
