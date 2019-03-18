@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
 public class GameController : PersistableObject
 {
@@ -21,9 +22,9 @@ public class GameController : PersistableObject
     public Image SteeringImage;
 
     public Text CoinsCollectedText;
-    public Text DaysInGameText;
+    //public Text DaysInGameText;
     public Text ScoreText;
-    public Text MissilesCollapsedText;
+    //public Text MissilesCollapsedText;
 
     public GameObject Player;
     public MissileSpawner MissileSpawner;
@@ -72,22 +73,45 @@ public class GameController : PersistableObject
         UpdateShipDescriptionText();
         UpdateShipSpecInterface();
         UpdateShipSpecs();
+
+        string gameId = "1234567";
+        bool testMode = true;
+
+        Advertisement.Initialize(gameId, testMode);
+        StartCoroutine(ShowAdWhenReady());
+    }
+
+    private readonly string placementId = "video";
+
+    private IEnumerator ShowAdWhenReady()
+    {
+        while (!Advertisement.IsReady(placementId))
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+        Advertisement.Show();
     }
 
     private void Update()
     {
         CoinsCollectedText.text = coins.ToString();
-        DaysInGameText.text = score.ToString();
-        MissilesCollapsedText.text = missilesCollapsed.ToString();
+        //DaysInGameText.text = score.ToString();
+        //MissilesCollapsedText.text = missilesCollapsed.ToString();
         ScoreText.text = score.ToString();
 
         if (isPlaying && Time.time > nextScoreUpdateTime)
         {
             score += 1;
             nextScoreUpdateTime = Time.time + 1f;
-            var scorePlus = Instantiate(ScorePlusPrefab);
-            scorePlus.transform.SetParent(canvas.transform, false);
+            SpawnScorePlusOne();
         }
+    }
+
+    private void SpawnScorePlusOne()
+    {
+        var scorePlus = Instantiate(ScorePlusPrefab);
+        scorePlus.transform.SetParent(canvas.transform, false);
+        Destroy(scorePlus, 3f);
     }
 
     public void HandlePlayButton()

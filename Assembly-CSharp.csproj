@@ -85,21 +85,6 @@
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/denislitvin/Library/Mobile Documents/com~apple~CloudDocs/Documents/Developer/Projects/Mine/Spacer/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
