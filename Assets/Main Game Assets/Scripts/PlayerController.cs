@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public Transform ScrollHolderTransform;
 
     public GameObject ExplosionPrefab;
+    public GameObject CoinCollectPrefab;
+    public GameObject BoostCollectPrefab;
+
 
     private Rigidbody rb;
     private GameController gameController;
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool isPlaying;
     private float lastMissileTargetSetTime;
     private float boostEnd;
+
 
     public void SetPlayingMode(bool isPlaying)
     {
@@ -117,18 +121,20 @@ public class PlayerController : MonoBehaviour
         {
             if (other.gameObject.tag == "Missile")
             {
+                Handheld.Vibrate();
                 isPlaying = false;
                 gameController.HandleShipDestroy();
                 GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
-                Destroy(explosion, 10f);
             }
             else if (other.gameObject.tag == "Coin")
             {
                 Destroy(other.gameObject);
                 gameController.HandleCoinCollect();
+                Instantiate(CoinCollectPrefab, Vector3.zero, Quaternion.identity);
             }
             else if (other.gameObject.tag == "Boost")
             {
+                Instantiate(BoostCollectPrefab, Vector3.zero, Quaternion.identity);
                 boostEnd = Time.time + 10f;
             }
         }

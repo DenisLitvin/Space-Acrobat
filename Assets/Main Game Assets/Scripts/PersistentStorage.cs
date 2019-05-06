@@ -11,6 +11,7 @@ public class PersistentStorage : MonoBehaviour
     void Awake()
     {
         savePath = Path.Combine(Application.persistentDataPath, "saveFile");
+        //print(savePath);
     }
 
     public bool SaveFileExist()

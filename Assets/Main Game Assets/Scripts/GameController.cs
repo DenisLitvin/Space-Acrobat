@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 using System.Collections;
 //using System.Collections.Generic;
 
@@ -30,7 +29,7 @@ public class GameController : PersistableObject
     public MissileSpawner MissileSpawner;
     public PlanetSpawner PlanetSpawner;
     public IncentiveSpawner IncentiveSpawner;
-
+    public AdManager AdManager;
     public PersistentStorage PersistentStorage;
 
     private PlayerController playerController;
@@ -73,26 +72,15 @@ public class GameController : PersistableObject
         UpdateShipDescriptionText();
         UpdateShipSpecInterface();
         UpdateShipSpecs();
-
-        string gameId = "1234567";
-        bool testMode = true;
-
-        Advertisement.Initialize(gameId, testMode);
-        StartCoroutine(ShowAdWhenReady());
-    }
-
-    private readonly string placementId = "video";
-
-    private IEnumerator ShowAdWhenReady()
-    {
-        while (!Advertisement.IsReady(placementId))
-        {
-            yield return new WaitForSeconds(0.25f);
-        }
-        Advertisement.Show();
+        AdManager.ShowInterstitial();
     }
 
     private void Update()
+    {
+        UpdateText();
+    }
+
+    private void UpdateText()
     {
         CoinsCollectedText.text = coins.ToString();
         //DaysInGameText.text = score.ToString();
@@ -105,6 +93,11 @@ public class GameController : PersistableObject
             nextScoreUpdateTime = Time.time + 1f;
             SpawnScorePlusOne();
         }
+    }
+
+    private bool HasMissiles()
+    {
+        return GameObject.FindGameObjectsWithTag("Missile").Length > 0;
     }
 
     private void SpawnScorePlusOne()
@@ -198,7 +191,7 @@ public class GameController : PersistableObject
         }
         if (requirements.Score > 0 && requirements.Score > topScore)
         {
-            str += "top score reached        " + topScore.ToString() + "/" + requirements.Score.ToString() + "\n"; 
+            str += "top score reached        " + topScore.ToString() + "/" + requirements.Score.ToString() + "\n";
         }
         if (requirements.MissilesCollapsed > 0 && requirements.MissilesCollapsed > (int)missilesCollapsed)
         {
@@ -213,7 +206,8 @@ public class GameController : PersistableObject
         PlayButton.interactable = CurrentShipAvailable();
     }
 
-    private void ShowLockOnShipIfNeeded() {
+    private void ShowLockOnShipIfNeeded()
+    {
         var color = LockImage.color;
         color.a = CurrentShipAvailable() ? 0f : 1f;
         LockImage.color = color;
@@ -227,7 +221,7 @@ public class GameController : PersistableObject
             && controller.requirements.MissilesCollapsed <= missilesCollapsed;
     }
 
-    private void ShowArrowButtonsIfNeeded() 
+    private void ShowArrowButtonsIfNeeded()
     {
         LeftButton.interactable = currentShipPrefab > 0;
         RightButton.interactable = currentShipPrefab < SpaceshipPrefabs.Length - 1;
@@ -260,7 +254,7 @@ public class GameController : PersistableObject
     {
         isPlaying = true;
 
-        level = 2;
+        level = 1;
         score = 0;
         savedShipSpeed = playerController.Speed;
 
@@ -287,6 +281,7 @@ public class GameController : PersistableObject
         DestroyIncentives();
         DestroyShip();
         StopCoroutine("SpawnMissiles");
+        MissileSpawner.StopSpawning();
         StopCoroutine("SpawnIncentives");
         StartCoroutine("ActivateInterface");
     }
@@ -321,8 +316,11 @@ public class GameController : PersistableObject
     {
         while (true)
         {
-            IncentiveSpawner.SpawnIncentive();
-            yield return new WaitForSeconds(10f);
+            if (Random.Range(0f, 1f) > 0.5)
+            {
+                IncentiveSpawner.SpawnIncentive();
+            }
+            yield return new WaitForSeconds(15f);
         }
     }
 
@@ -331,9 +329,21 @@ public class GameController : PersistableObject
         while (true)
         {
             DestroyMissiles();
-            MissileSpawner.SpawnMissiles(level);
+            int missiles = level / 2;
+            if (missiles % 2 > 0)
+            {
+                missiles += 1;
+            }
+            MissileSpawner.SpawnMissiles(Mathf.Clamp(missiles + 2, 1, 10));
             level += 1;
-            yield return new WaitForSeconds(10f);
+            if (level < 3)
+            {
+                yield return new WaitForSeconds(5f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(10f);
+            }
         }
     }
 
