@@ -72,7 +72,6 @@ public class GameController : PersistableObject
         UpdateShipDescriptionText();
         UpdateShipSpecInterface();
         UpdateShipSpecs();
-        AdManager.ShowInterstitial();
     }
 
     private void Update()
@@ -284,6 +283,7 @@ public class GameController : PersistableObject
         MissileSpawner.StopSpawning();
         StopCoroutine("SpawnIncentives");
         StartCoroutine("ActivateInterface");
+        AdManager.ShowInterstitial();
     }
 
     IEnumerator ActivateInterface()
