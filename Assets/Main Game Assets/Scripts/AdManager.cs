@@ -22,7 +22,7 @@ public class AdManager : MonoBehaviour
         string appId = "unexpected_platform";
 #endif
 
-        //MobileAds.SetiOSAppPauseOnBackground(true);
+        MobileAds.SetiOSAppPauseOnBackground(true);
         MobileAds.Initialize(appId);
 
         RequestInterstitial();
